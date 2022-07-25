@@ -1,30 +1,36 @@
-npm i jsmind
-npm install @sniptt/monads
+# Intelehealth Mindmap Automation
 
-# Jstree
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
+## Getting Started
 
-## Development server
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Installing
 
-## Code scaffolding
+A step by step series of examples that tell you how to get a development environment running
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clone or download this repository
+2. Install all the dependencies.
 
-## Build
+```
+"npm install"
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+3. Start the server
 
-## Running unit tests
+```
+"ng serve"
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Open in browser
 
-## Running end-to-end tests
+```
+ "localhost:4200"
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Built With
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Angular](https://angular.io/) - Angular Framework
+- [Angular Material](https://material.angular.io/) - Designing
+- [BootStrap](https://getbootstrap.com/) - Table, Cards and other UI design
