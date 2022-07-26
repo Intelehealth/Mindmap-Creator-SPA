@@ -32,5 +32,4 @@ A step by step series of examples that tell you how to get a development environ
 ## Built With
 
 - [Angular](https://angular.io/) - Angular Framework
-- [Angular Material](https://material.angular.io/) - Designing
 - [BootStrap](https://getbootstrap.com/) - Table, Cards and other UI design
