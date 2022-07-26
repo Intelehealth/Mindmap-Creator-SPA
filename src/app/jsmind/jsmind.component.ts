@@ -3,6 +3,9 @@ import { IHealthData } from '../Interfaces/ihealth-data';
 import { IMindMapData } from '../Interfaces/mindmap-interface';
 import { MindmapService } from '../services/mindmap.service';
 import { Result, Ok, Err } from '@sniptt/monads';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModaldialogComponent } from '../modaldialog/modaldialog.component';
+import { ModaladdhealthdataComponent } from '../modaladdhealthdata/modaladdhealthdata.component';
 declare var jsMind: any;
 const options = {
   container: 'jsmind_container',
@@ -37,7 +40,12 @@ export class JsmindComponent implements OnInit {
     text: '',
   };
   isShown: boolean = false;
-  constructor(private dataService: MindmapService) {}
+  constructor(
+    private dataService: MindmapService,
+    private _modalService: NgbModal
+  ) {
+    // this._modalService.dismissAll();
+  }
 
   ngOnInit() {
     this.mindMap = new jsMind(options);
@@ -56,19 +64,28 @@ export class JsmindComponent implements OnInit {
       this.mindMap.show(mind);
     });
   }
-  saveData() {
-    this.addData.id = Math.random().toString();
-    let mmData = this.dataService.getMindMapData(this.addData);
+  saveData(hdata: IHealthData) {
+    let mmData = this.dataService.getMindMapData(hdata);
     let isAdd = this.addNode(mmData);
     if (isAdd.isErr()) {
       alert(isAdd.unwrapErr());
     } else {
-      this.addData = { text: '' };
+      hdata = { text: '' };
       this.isShown = false;
     }
   }
   addShow() {
-    this.isShown = true;
+    //this.isShown = true;
+    let modal = this._modalService.open(ModaladdhealthdataComponent, {
+      backdrop: true,
+      size: 'xl',
+    });
+    modal.result.then((res: IHealthData) => {
+      if (res) {
+        let mindmapData = this.dataService.getMindMapData(res);
+        this.addNode(mindmapData);
+      }
+    });
   }
   addNode(mmData: IMindMapData): Result<string, string> {
     let selectedNode = this.mindMap.get_selected_node();

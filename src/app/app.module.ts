@@ -14,6 +14,10 @@ import { PieCustomDataComponent } from './pie-custom-data/pie-custom-data.compon
 import { MindmapComponent } from './mindmap/mindmap.component';
 import { JsmindComponent } from './jsmind/jsmind.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddhealthdataComponent } from './addhealthdata/addhealthdata.component';
+import { ModaldialogComponent } from './modaldialog/modaldialog.component';
+import { ModaladdhealthdataComponent } from './modaladdhealthdata/modaladdhealthdata.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +26,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     PieCustomDataComponent,
     MindmapComponent,
     JsmindComponent,
+    AddhealthdataComponent,
+    ModaldialogComponent,
+    ModaladdhealthdataComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [PieDataService],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
+  providers: [PieDataService, NgbActiveModal],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

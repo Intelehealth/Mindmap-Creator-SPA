@@ -1,0 +1,152 @@
+<div class="form-floating mb-3">
+  <!--
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="txtID"
+        placeholder=""
+        name="txtID"
+        #txtID
+      />
+      <label for="txtID">ID</label>
+    </div>
+    -->
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtText"
+      placeholder=""
+      name="txtText"
+      [(ngModel)]="addData.text"
+    />
+    <label for="txtText">Text</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtPPE"
+      placeholder=""
+      name="txtPPE"
+      [(ngModel)]="addData.perform_physical_exam"
+    />
+    <label for="txtPPE">Perform Physical Exam</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtDisplay"
+      placeholder=""
+      name="txtDisplay"
+      [(ngModel)]="addData.display"
+    />
+    <label for="txtDisplay">Display</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtDisplayOR"
+      placeholder=""
+      name="txtDisplayOR"
+      [(ngModel)]="addData.display_or"
+    />
+    <label for="txtDisplayOR">Display OR</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtDisplayHI"
+      placeholder=""
+      name="txtDisplayHI"
+      [(ngModel)]="addData.display_hi"
+    />
+    <label for="txtDisplayHI">Display HI</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtLanguage"
+      placeholder=""
+      name="txtLanguage"
+      [(ngModel)]="addData.language"
+    />
+    <label for="txtLanguage">Language</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtInputType"
+      placeholder=""
+      name="txtInputType"
+      [(ngModel)]="addData.input_type"
+    />
+    <label for="txtInputType">Input Type</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtGender"
+      placeholder=""
+      name="txtGender"
+      [(ngModel)]="addData.gender"
+    />
+    <label for="txtgender">Gender</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtAgeMin"
+      placeholder=""
+      name="txtAgeMin"
+      [(ngModel)]="addData.age_min"
+    />
+    <label for="txtAgeMin">Age Min</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtAgeMax"
+      placeholder=""
+      name="txtAgeMax"
+      [(ngModel)]="addData.age_max"
+    />
+    <label for="txtAgeMax">Age Max</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtPosCon"
+      placeholder=""
+      name="txtPosCon"
+      [(ngModel)]="addData.pos_condition"
+    />
+    <label for="txtPosCon">Positive Condition</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="txtNegCon"
+      placeholder=""
+      name="txtNegCon"
+      [(ngModel)]="addData.neg_condition"
+    />
+    <label for="txtNegCon">Negative Condition</label>
+  </div>
+  <div class="form-floating mb-3">
+    <button type="submit" class="btn btn-primary" (click)="saveData()">
+      Save
+    </button>
+  </div>
+</div>
