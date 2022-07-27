@@ -34,6 +34,7 @@ const options = {
   styleUrls: ['./jsmind.component.css'],
 })
 export class JsmindComponent implements OnInit {
+  file?: any;
   mindMap: any;
   title = 'example-angular10';
   addData: IHealthData = {
@@ -43,9 +44,7 @@ export class JsmindComponent implements OnInit {
   constructor(
     private dataService: MindmapService,
     private _modalService: NgbModal
-  ) {
-    // this._modalService.dismissAll();
-  }
+  ) {}
 
   ngOnInit() {
     this.mindMap = new jsMind(options);
@@ -105,5 +104,30 @@ export class JsmindComponent implements OnInit {
     var helth_data = this.dataService.getHealthData(mind_data.data);
     var mind_str = jsMind.util.json.json2string(helth_data);
     jsMind.util.file.save(mind_str, 'text/json', mind_name + '.json');
+  }
+  handleFileInput(event: Event) {
+    this.file = (event.target as HTMLInputElement).files?.item(0);
+    this.readFile(this.file);
+  }
+  readFile(file: File) {
+    var reader = new FileReader();
+    reader.onload = () => {
+      console.log(reader.result);
+      if (reader.result) {
+        let healthdata: IHealthData = JSON.parse(reader.result?.toString());
+        let mmData = this.dataService.getMindMapData(healthdata);
+        var mind = {
+          meta: {
+            name: 'sample',
+            // author: 'hizzgdev@163.com',
+            // version: '0.2',
+          },
+          format: 'node_tree',
+          data: mmData,
+        };
+        this.mindMap.show(mind);
+      }
+    };
+    reader.readAsText(file);
   }
 }

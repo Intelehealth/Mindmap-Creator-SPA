@@ -1,18 +1,41 @@
-<div>
-  <div class="row mb-2">
-    <button id="btnAdd" class="btn btn-primary me-2 col" (click)="addShow()">
-      Add
-    </button>
-    <button
-      id="btnDelete"
-      class="btn btn-primary me-2 col"
-      (click)="deleteNode()"
-    >
-      Delete
-    </button>
-    <button id="btnJson" class="btn btn-primary col" (click)="getJsonData()">
-      GetJson
-    </button>
+<div class="container">
+  <div class="row mt-4">
+    <div class="input-group mb-3 col">
+      <input
+        type="file"
+        class="form-control"
+        id="inputGroupFile02"
+        (change)="handleFileInput($event)"
+      />
+      <label class="input-group-text" for="inputGroupFile02">Upload</label>
+    </div>
+
+    <div class="col">
+      <button
+        type="button"
+        id="btnAdd"
+        class="btn btn-primary me-2"
+        (click)="addShow()"
+      >
+        Add
+      </button>
+      <button
+        type="button"
+        id="btnDelete"
+        class="btn btn-primary me-2"
+        (click)="deleteNode()"
+      >
+        Delete
+      </button>
+      <button
+        type="button"
+        id="btnJson"
+        class="btn btn-primary me"
+        (click)="getJsonData()"
+      >
+        GetJson
+      </button>
+    </div>
   </div>
 
   <div id="jsmind_container"></div>
