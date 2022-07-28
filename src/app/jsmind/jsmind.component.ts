@@ -82,7 +82,10 @@ export class JsmindComponent implements OnInit {
     modal.result.then((res: IHealthData) => {
       if (res) {
         let mindmapData = this.dataService.getMindMapData(res);
-        this.addNode(mindmapData);
+        let isAdd = this.addNode(mindmapData);
+        if (isAdd.isErr()) {
+          alert(isAdd.unwrapErr());
+        }
       }
     });
   }
@@ -96,7 +99,15 @@ export class JsmindComponent implements OnInit {
 
   deleteNode() {
     let selectedNode = this.mindMap.get_selected_node();
-    this.mindMap.remove_node(selectedNode);
+    if (!selectedNode) {
+      alert('Please Select Node to delete');
+    } else {
+      let answer = window.confirm('Are you sure you want to delete node?');
+      if (answer) {
+        this.mindMap.remove_node(selectedNode);
+        // alert('Node deleted');
+      }
+    }
   }
   getJsonData() {
     var mind_data = this.mindMap.get_data('node_tree');
@@ -112,7 +123,7 @@ export class JsmindComponent implements OnInit {
   readFile(file: File) {
     var reader = new FileReader();
     reader.onload = () => {
-      console.log(reader.result);
+      //console.log(reader.result);
       if (reader.result) {
         let healthdata: IHealthData = JSON.parse(reader.result?.toString());
         let mmData = this.dataService.getMindMapData(healthdata);
