@@ -19,13 +19,22 @@ const options = {
     vmargin: 50, // Minimum vertical distance of the mindmap from the outer frame of the container
     line_width: 1, // thickness of the mindmap line
     line_color: '#555', // Thought mindmap line color
-    draggable: false, // Drag the mind map with your mouse, when it's larger that the container
+    draggable: true, // Drag the mind map with your mouse, when it's larger that the container
     hide_scrollbars_when_draggable: false, // Hide container scrollbars, when mind map is larger than container and draggable option is true.
   },
   layout: {
     hspace: 100, // horizontal spacing between nodes
-    vspace: 20, // vertical spacing between nodes
-    pspace: 13, // Horizontal spacing between node and connection line (to place node expander)
+    vspace: 25, // vertical spacing between nodes
+    pspace: 10, // Horizontal spacing between node and connection line (to place node expander)
+  },
+  shortcut: {
+    enable: true, // whether to enable shortcut
+    handles: {
+      enable_mousedown_handle: true,
+      enable_click_handle: true,
+      enable_dblclick_handle: true,
+      enable_mousewheel_handle: true,
+    },
   },
 };
 @Component({
@@ -113,7 +122,8 @@ export class JsmindComponent implements OnInit {
     var mind_data = this.mindMap.get_data('node_tree');
     var mind_name = mind_data.meta.name;
     var helth_data = this.dataService.getHealthData(mind_data.data);
-    var mind_str = jsMind.util.json.json2string(helth_data);
+    var mind_str = JSON.stringify(helth_data, undefined, 4);
+    //jsMind.util.json.json2string(helth_data);
     jsMind.util.file.save(mind_str, 'text/json', mind_name + '.json');
   }
   handleFileInput(event: Event) {
