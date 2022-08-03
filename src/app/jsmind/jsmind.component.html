@@ -1,7 +1,7 @@
 <div class="container">
   <nav class="navbar navbar-default fixed-top">
-    <div class="row mt-4">
-      <div class="input-group mb-3 col">
+    <div class="row mt-4 col">
+      <div class="input-group mb-5 col">
         <input
           type="file"
           class="form-control"
@@ -15,7 +15,7 @@
         <button
           type="button"
           id="btnAdd"
-          class="btn btn-primary me-2"
+          class="btn btn-primary me-3"
           (click)="addShow()"
         >
           Add
@@ -23,7 +23,7 @@
         <button
           type="button"
           id="btnDelete"
-          class="btn btn-primary me-2"
+          class="btn btn-primary me-3"
           (click)="deleteNode()"
         >
           Delete
@@ -31,13 +31,21 @@
         <button
           type="button"
           id="btnJson"
-          class="btn btn-primary me"
+          class="btn btn-primary me-3"
           (click)="getJsonData()"
         >
           GetJson
         </button>
+        <button class="btn btn-primary me-3" (click)="zoomin()">
+          <i class="bi bi-zoom-in"></i>
+          Zoom in
+        </button>
+        <button class="btn btn-primary" (click)="zoomout()">
+          <i class="bi bi-zoom-out"></i>
+          Zoom out
+        </button>
       </div>
     </div>
   </nav>
-  <div id="jsmind_container"></div>
+  <div class="row" id="jsmind_container"></div>
 </div>

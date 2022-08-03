@@ -151,4 +151,10 @@ export class JsmindComponent implements OnInit {
     };
     reader.readAsText(file);
   }
+  zoomin() {
+    this.mindMap.view.zoomIn();
+  }
+  zoomout() {
+    this.mindMap.view.zoomOut();
+  }
 }
