@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,6 +7,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./modaldialog.component.css'],
 })
 export class ModaldialogComponent implements OnInit {
+  @Input() public title: string = '';
   constructor(public modal: NgbActiveModal) {}
 
   ngOnInit(): void {}

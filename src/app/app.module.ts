@@ -18,6 +18,8 @@ import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddhealthdataComponent } from './addhealthdata/addhealthdata.component';
 import { ModaldialogComponent } from './modaldialog/modaldialog.component';
 import { ModaladdhealthdataComponent } from './modaladdhealthdata/modaladdhealthdata.component';
+import { ModaledithealthdataComponent } from './modaledithealthdata/modaledithealthdata.component';
+import { EdithealthdataComponent } from './edithealthdata/edithealthdata.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ModaladdhealthdataComponent } from './modaladdhealthdata/modaladdhealth
     AddhealthdataComponent,
     ModaldialogComponent,
     ModaladdhealthdataComponent,
+    ModaledithealthdataComponent,
+    EdithealthdataComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
   providers: [PieDataService, NgbActiveModal],

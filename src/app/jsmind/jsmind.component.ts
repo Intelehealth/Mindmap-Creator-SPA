@@ -6,6 +6,7 @@ import { Result, Ok, Err } from '@sniptt/monads';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModaldialogComponent } from '../modaldialog/modaldialog.component';
 import { ModaladdhealthdataComponent } from '../modaladdhealthdata/modaladdhealthdata.component';
+import { ModaledithealthdataComponent } from '../modaledithealthdata/modaledithealthdata.component';
 declare var jsMind: any;
 const options = {
   container: 'jsmind_container',
@@ -98,12 +99,35 @@ export class JsmindComponent implements OnInit {
       }
     });
   }
+  editNodeData() {
+    let modal = this._modalService.open(ModaledithealthdataComponent, {
+      backdrop: true,
+      size: 'xl',
+    });
+
+    let selectedNode = this.mindMap.get_selected_node();
+    let data = selectedNode.data;
+
+    modal.componentInstance.healthdata = data;
+    modal.result.then((res: IHealthData) => {
+      if (res) {
+        this.editNode(res);
+      }
+    });
+  }
   addNode(mmData: IMindMapData): Result<string, string> {
     let selectedNode = this.mindMap.get_selected_node();
     if (!selectedNode) return Err('Please Select Node');
 
     this.mindMap.add_node(selectedNode, mmData.id, mmData.topic, mmData);
     return Ok('Node Added');
+  }
+  editNode(mmData: IHealthData): Result<string, string> {
+    let selectedNode = this.mindMap.get_selected_node();
+    if (!selectedNode) return Err('Please Select Node');
+    selectedNode.data = mmData;
+    this.mindMap.update_node(selectedNode.id, mmData.text);
+    return Ok('Node Edited');
   }
 
   deleteNode() {

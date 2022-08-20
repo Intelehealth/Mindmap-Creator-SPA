@@ -1,6 +1,7 @@
 export interface IMindMapData {
   id?: string;
   topic: string;
+  text?: string;
   perform_physical_exam?: string;
   display?: string;
   display_or?: string;

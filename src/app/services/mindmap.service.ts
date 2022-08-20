@@ -72,6 +72,7 @@ export class MindmapService {
     let item: IMindMapData = { topic: '' };
     if (healthdata) {
       item.id = healthdata.id;
+      item.text = healthdata.text;
       item.topic = healthdata.text;
       item.perform_physical_exam = healthdata.perform_physical_exam;
       item.display = healthdata.display;

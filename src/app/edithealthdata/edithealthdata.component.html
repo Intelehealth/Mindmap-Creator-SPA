@@ -6,7 +6,7 @@
       id="txtText"
       placeholder=""
       name="txtText"
-      [(ngModel)]="addData.text"
+      [(ngModel)]="healthdata.text"
     />
     <label for="txtText">Text</label>
   </div>
@@ -17,7 +17,7 @@
       id="txtPPE"
       placeholder=""
       name="txtPPE"
-      [(ngModel)]="addData.perform_physical_exam"
+      [(ngModel)]="healthdata.perform_physical_exam"
     />
     <label for="txtPPE">Perform Physical Exam</label>
   </div>
@@ -28,7 +28,7 @@
       id="txtDisplay"
       placeholder=""
       name="txtDisplay"
-      [(ngModel)]="addData.display"
+      [(ngModel)]="healthdata.display"
     />
     <label for="txtDisplay">Display</label>
   </div>
@@ -39,7 +39,7 @@
       id="txtDisplayOR"
       placeholder=""
       name="txtDisplayOR"
-      [(ngModel)]="addData.display_or"
+      [(ngModel)]="healthdata.display_or"
     />
     <label for="txtDisplayOR">Display OR</label>
   </div>
@@ -50,7 +50,7 @@
       id="txtDisplayHI"
       placeholder=""
       name="txtDisplayHI"
-      [(ngModel)]="addData.display_hi"
+      [(ngModel)]="healthdata.display_hi"
     />
     <label for="txtDisplayHI">Display HI</label>
   </div>
@@ -61,7 +61,7 @@
       id="txtLanguage"
       placeholder=""
       name="txtLanguage"
-      [(ngModel)]="addData.language"
+      [(ngModel)]="healthdata.language"
     />
     <label for="txtLanguage">Language</label>
   </div>
@@ -72,7 +72,7 @@
       id="txtInputType"
       placeholder=""
       name="txtInputType"
-      [(ngModel)]="addData.input_type"
+      [(ngModel)]="healthdata.input_type"
     />
     <label for="txtInputType">Input Type</label>
   </div>
@@ -83,7 +83,7 @@
       id="txtGender"
       placeholder=""
       name="txtGender"
-      [(ngModel)]="addData.gender"
+      [(ngModel)]="healthdata.gender"
     />
     <label for="txtgender">Gender</label>
   </div>
@@ -94,7 +94,7 @@
       id="txtAgeMin"
       placeholder=""
       name="txtAgeMin"
-      [(ngModel)]="addData.age_min"
+      [(ngModel)]="healthdata.age_min"
     />
     <label for="txtAgeMin">Age Min</label>
   </div>
@@ -105,7 +105,7 @@
       id="txtAgeMax"
       placeholder=""
       name="txtAgeMax"
-      [(ngModel)]="addData.age_max"
+      [(ngModel)]="healthdata.age_max"
     />
     <label for="txtAgeMax">Age Max</label>
   </div>
@@ -116,7 +116,7 @@
       id="txtPosCon"
       placeholder=""
       name="txtPosCon"
-      [(ngModel)]="addData.pos_condition"
+      [(ngModel)]="healthdata.pos_condition"
     />
     <label for="txtPosCon">Positive Condition</label>
   </div>
@@ -127,12 +127,12 @@
       id="txtNegCon"
       placeholder=""
       name="txtNegCon"
-      [(ngModel)]="addData.neg_condition"
+      [(ngModel)]="healthdata.neg_condition"
     />
     <label for="txtNegCon">Negative Condition</label>
   </div>
   <div class="form-floating mb-3">
-    <button type="submit" class="btn btn-primary" (click)="saveData()">
+    <button type="submit" class="btn btn-primary" (click)="editData()">
       Save
     </button>
   </div>
