@@ -15,7 +15,7 @@ export class EdithealthdataComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.healthdata);
+    //console.log(this.healthdata);
   }
   editData() {
     this.onEdit.emit(this.healthdata);

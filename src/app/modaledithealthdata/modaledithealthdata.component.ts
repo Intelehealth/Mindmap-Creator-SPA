@@ -15,6 +15,7 @@ export class ModaledithealthdataComponent implements OnInit {
 
   ngOnInit(): void {}
   editData(hdata: IHealthData) {
+    console.log('health data', hdata);
     this.modal.close(hdata);
   }
 }

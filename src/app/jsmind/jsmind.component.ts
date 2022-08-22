@@ -85,6 +85,11 @@ export class JsmindComponent implements OnInit {
   }
   addShow() {
     //this.isShown = true;
+    let selectedNode = this.mindMap.get_selected_node();
+    if (!selectedNode) {
+      alert('Please Select Node');
+      return;
+    }
     let modal = this._modalService.open(ModaladdhealthdataComponent, {
       backdrop: true,
       size: 'xl',
@@ -100,18 +105,25 @@ export class JsmindComponent implements OnInit {
     });
   }
   editNodeData() {
+    let selectedNode = this.mindMap.get_selected_node();
+    if (!selectedNode) {
+      alert('Please Select Node');
+      return;
+    }
+
+    let data = selectedNode.data;
     let modal = this._modalService.open(ModaledithealthdataComponent, {
       backdrop: true,
       size: 'xl',
     });
 
-    let selectedNode = this.mindMap.get_selected_node();
-    let data = selectedNode.data;
-
     modal.componentInstance.healthdata = data;
     modal.result.then((res: IHealthData) => {
       if (res) {
-        this.editNode(res);
+        let isEdit = this.editNode(res);
+        if (isEdit.isErr()) {
+          alert(isEdit.unwrapErr());
+        }
       }
     });
   }
