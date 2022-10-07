@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 //imports
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Providers
 import { PieDataService } from './services/pie-data.service';
@@ -34,7 +34,13 @@ import { EdithealthdataComponent } from './edithealthdata/edithealthdata.compone
     ModaledithealthdataComponent,
     EdithealthdataComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
+  ],
   providers: [PieDataService, NgbActiveModal],
   bootstrap: [AppComponent],
 })

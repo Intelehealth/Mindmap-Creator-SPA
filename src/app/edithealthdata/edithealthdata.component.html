@@ -1,139 +1,167 @@
-<div class="form-floating mb-3">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
   <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtText"
-      placeholder=""
-      name="txtText"
-      [(ngModel)]="healthdata.text"
-    />
-    <label for="txtText">Text</label>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="txtText"
+        placeholder=""
+        name="txtText"
+        [(ngModel)]="healthdata.text"
+        formControlName="txtText"
+      />
+      <label for="txtText">Text</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="txtDisplay"
+        placeholder=""
+        name="txtDisplay"
+        [(ngModel)]="healthdata.display"
+        formControlName="txtDisplay"
+      />
+      <label for="txtDisplay">Display</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="txtDisplayOR"
+        placeholder=""
+        name="txtDisplayOR"
+        [(ngModel)]="healthdata.display_or"
+        formControlName="txtDisplayOR"
+      />
+      <label for="txtDisplayOR">Display OR</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="txtDisplayHI"
+        placeholder=""
+        name="txtDisplayHI"
+        [(ngModel)]="healthdata.display_hi"
+        formControlName="txtDisplayHI"
+      />
+      <label for="txtDisplayHI">Display HI</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="txtLanguage"
+        placeholder=""
+        name="txtLanguage"
+        [(ngModel)]="healthdata.language"
+        formControlName="txtLanguage"
+      />
+      <label for="txtLanguage">Language</label>
+    </div>
+    <div class="form-floating mb-3">
+      <select
+        name="txtInputType"
+        id="txtInputType"
+        class="form-control"
+        [(ngModel)]="healthdata.input_type"
+        formControlName="txtInputType"
+      >
+        <option value="number" selected="selected">number</option>
+        <option value="text">text</option>
+        <option value="date">date</option>
+        <option value="duration">duration</option>
+        <option value="camera">camera</option>
+        <option value="area">area</option>
+      </select>
+      <label for="txtInputType">Input Type</label>
+    </div>
+    <div class="form-floating mb-3">
+      <select
+        name="txtGender"
+        id="txtGender"
+        class="form-control"
+        [(ngModel)]="healthdata.gender"
+        formControlName="txtGender"
+      >
+        <option value="male" selected="selected">male</option>
+        <option value="female">female</option>
+        <option value="other">other</option>
+      </select>
+      <label for="txtgender">Gender</label>
+    </div>
+    <div class="form-floating mb-3">
+      <select
+        class="form-control"
+        [(ngModel)]="healthdata.age_min"
+        #txtAgeMin
+        (change)="onSelectedMinAge(txtAgeMin.value)"
+        formControlName="txtAgeMin"
+      >
+        <option *ngFor="let age of ages">{{ age }}</option>
+      </select>
+      <label for="txtAgeMin">Age Min</label>
+      <p class="text-danger" *ngIf="ageMinHasError">
+        Min age must be less than Max age
+      </p>
+    </div>
+    <div class="form-floating mb-3">
+      <select
+        class="form-control"
+        [(ngModel)]="healthdata.age_max"
+        #txtAgeMax
+        (change)="onSelected(txtAgeMax.value)"
+        formControlName="txtAgeMax"
+      >
+        <option *ngFor="let age of ages">{{ age }}</option>
+      </select>
+      <label for="txtAgeMax">Age Max</label>
+      <p class="text-danger" *ngIf="ageMaxHasError">
+        Max age must be greater than Min age
+      </p>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="txtPosCon"
+        placeholder=""
+        name="txtPosCon"
+        [(ngModel)]="healthdata.pos_condition"
+        formControlName="txtPosCon"
+      />
+      <label for="txtPosCon">Positive Condition</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="txtNegCon"
+        placeholder=""
+        name="txtNegCon"
+        [(ngModel)]="healthdata.neg_condition"
+        formControlName="txtNegCon"
+      />
+      <label for="txtNegCon">Negative Condition</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="txtPPE"
+        placeholder=""
+        name="txtPPE"
+        [(ngModel)]="healthdata.perform_physical_exam"
+        formControlName="txtPPE"
+      />
+      <label for="txtPPE">Perform Physical Exam</label>
+    </div>
+    <div class="form-floating mb-3">
+      <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">
+        Save
+      </button>
+    </div>
   </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtPPE"
-      placeholder=""
-      name="txtPPE"
-      [(ngModel)]="healthdata.perform_physical_exam"
-    />
-    <label for="txtPPE">Perform Physical Exam</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtDisplay"
-      placeholder=""
-      name="txtDisplay"
-      [(ngModel)]="healthdata.display"
-    />
-    <label for="txtDisplay">Display</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtDisplayOR"
-      placeholder=""
-      name="txtDisplayOR"
-      [(ngModel)]="healthdata.display_or"
-    />
-    <label for="txtDisplayOR">Display OR</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtDisplayHI"
-      placeholder=""
-      name="txtDisplayHI"
-      [(ngModel)]="healthdata.display_hi"
-    />
-    <label for="txtDisplayHI">Display HI</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtLanguage"
-      placeholder=""
-      name="txtLanguage"
-      [(ngModel)]="healthdata.language"
-    />
-    <label for="txtLanguage">Language</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtInputType"
-      placeholder=""
-      name="txtInputType"
-      [(ngModel)]="healthdata.input_type"
-    />
-    <label for="txtInputType">Input Type</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtGender"
-      placeholder=""
-      name="txtGender"
-      [(ngModel)]="healthdata.gender"
-    />
-    <label for="txtgender">Gender</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtAgeMin"
-      placeholder=""
-      name="txtAgeMin"
-      [(ngModel)]="healthdata.age_min"
-    />
-    <label for="txtAgeMin">Age Min</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtAgeMax"
-      placeholder=""
-      name="txtAgeMax"
-      [(ngModel)]="healthdata.age_max"
-    />
-    <label for="txtAgeMax">Age Max</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtPosCon"
-      placeholder=""
-      name="txtPosCon"
-      [(ngModel)]="healthdata.pos_condition"
-    />
-    <label for="txtPosCon">Positive Condition</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtNegCon"
-      placeholder=""
-      name="txtNegCon"
-      [(ngModel)]="healthdata.neg_condition"
-    />
-    <label for="txtNegCon">Negative Condition</label>
-  </div>
-  <div class="form-floating mb-3">
-    <button type="submit" class="btn btn-primary" (click)="editData()">
-      Save
-    </button>
-  </div>
-</div>
+</form>
