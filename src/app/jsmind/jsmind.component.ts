@@ -90,6 +90,7 @@ export class JsmindComponent implements OnInit {
       alert('Please Select Node');
       return;
     }
+
     let modal = this._modalService.open(ModaladdhealthdataComponent, {
       backdrop: true,
       size: 'xl',

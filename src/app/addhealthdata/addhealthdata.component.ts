@@ -1,7 +1,8 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { IHealthData } from '../Interfaces/ihealth-data';
 import { Result, Ok, Err } from '@sniptt/monads';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AgeCompareValidator } from '../validators/agecomparevalidator';
 @Component({
   selector: 'app-addhealthdata',
   templateUrl: './addhealthdata.component.html',
@@ -15,20 +16,25 @@ export class AddhealthdataComponent implements OnInit {
   selectedMaxAgeValue = '';
   selectedMinAgeValue = '';
   ages: Array<number> = [];
-  myForm = new FormGroup({
-    txtText: new FormControl(),
-    txtDisplay: new FormControl(),
-    txtDisplayOR: new FormControl(),
-    txtDisplayHI: new FormControl(),
-    txtLanguage: new FormControl(),
-    txtInputType: new FormControl(),
-    txtGender: new FormControl(),
-    txtPosCon: new FormControl(),
-    txtNegCon: new FormControl(),
-    txtPPE: new FormControl(),
-    txtAgeMin: new FormControl('', [Validators.required]),
-    txtAgeMax: new FormControl('', [Validators.required]),
-  });
+
+  myForm = new FormGroup(
+    {
+      txtText: new FormControl(),
+      txtDisplay: new FormControl(),
+      txtDisplayOR: new FormControl(),
+      txtDisplayHI: new FormControl(),
+      txtLanguage: new FormControl(),
+      txtInputType: new FormControl(),
+      txtGender: new FormControl(),
+      txtPosCon: new FormControl(),
+      txtNegCon: new FormControl(),
+      txtPPE: new FormControl(),
+      txtAgeMin: new FormControl('txtAgeMin', [Validators.required]),
+      txtAgeMax: new FormControl('txtAgeMax', [Validators.required]),
+    },
+
+    { validators: AgeCompareValidator }
+  );
 
   ageMaxHasError: boolean = false;
   ageMinHasError: boolean = false;
@@ -43,7 +49,7 @@ export class AddhealthdataComponent implements OnInit {
     this.addData.id = Math.random().toString();
     this.onSave.emit(this.addData);
   }
-  onSelectedMinAge(value: string): void {
+  /* onSelectedMinAge(value: string): void {
     this.selectedMinAgeValue = value;
     if (this.selectedMaxAgeValue < this.selectedMinAgeValue) {
       this.ageMinHasError = true;
@@ -58,5 +64,5 @@ export class AddhealthdataComponent implements OnInit {
     } else {
       this.ageMaxHasError = true;
     }
-  }
+  }*/
 }

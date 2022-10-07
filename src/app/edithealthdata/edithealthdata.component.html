@@ -122,7 +122,7 @@
         Max age must be greater than Min age
       </p>
     </div>
-    <div class="form-floating mb-3">
+    <div class="form-floating mb-3" *ngIf="positiveCondition">
       <input
         type="text"
         class="form-control"
@@ -134,7 +134,7 @@
       />
       <label for="txtPosCon">Positive Condition</label>
     </div>
-    <div class="form-floating mb-3">
+    <div class="form-floating mb-3" *ngIf="negativeCondition">
       <input
         type="text"
         class="form-control"

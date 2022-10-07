@@ -31,6 +31,8 @@ export class EdithealthdataComponent implements OnInit {
   });
   ageMaxHasError: boolean = false;
   ageMinHasError: boolean = false;
+  positiveCondition: boolean = false;
+  negativeCondition: boolean = false;
   constructor() {
     for (var i = 1; i <= 120; i++) {
       this.ages.push(i);
@@ -38,7 +40,16 @@ export class EdithealthdataComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //console.log(this.healthdata);
+    // console.log(this.healthdata);
+    if (
+      this.healthdata.text.toLowerCase() == 'Associated symptoms'.toLowerCase()
+    ) {
+      this.positiveCondition = true;
+      this.negativeCondition = true;
+    } else {
+      this.positiveCondition = false;
+      this.negativeCondition = false;
+    }
   }
   onSubmit() {
     this.onEdit.emit(this.healthdata);
