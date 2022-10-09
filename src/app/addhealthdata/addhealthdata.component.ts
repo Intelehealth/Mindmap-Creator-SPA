@@ -13,8 +13,6 @@ export class AddhealthdataComponent implements OnInit {
   addData: IHealthData = {
     text: '',
   };
-  selectedMaxAgeValue = '';
-  selectedMinAgeValue = '';
   ages: Array<number> = [];
 
   myForm = new FormGroup(
@@ -36,8 +34,6 @@ export class AddhealthdataComponent implements OnInit {
     { validators: AgeCompareValidator }
   );
 
-  ageMaxHasError: boolean = false;
-  ageMinHasError: boolean = false;
   constructor() {
     for (var i = 1; i <= 120; i++) {
       this.ages.push(i);
@@ -49,20 +45,4 @@ export class AddhealthdataComponent implements OnInit {
     this.addData.id = Math.random().toString();
     this.onSave.emit(this.addData);
   }
-  /* onSelectedMinAge(value: string): void {
-    this.selectedMinAgeValue = value;
-    if (this.selectedMaxAgeValue < this.selectedMinAgeValue) {
-      this.ageMinHasError = true;
-    } else {
-      this.ageMinHasError = false;
-    }
-  }
-  onSelected(value: string): void {
-    this.selectedMaxAgeValue = value;
-    if (this.selectedMaxAgeValue > this.selectedMinAgeValue) {
-      this.ageMaxHasError = false;
-    } else {
-      this.ageMaxHasError = true;
-    }
-  }*/
 }
