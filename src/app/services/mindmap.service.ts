@@ -18,13 +18,20 @@ export class MindmapService {
         id: 'ID_210551359',
         text: 'Site',
         display: 'Which part of the abdomen do you feel pain?',
+        isRequired: true,
+        multi_choice: true,
         display_or: 'କୋଉଯାଗାରେ',
+        exclude_from_multi_choice: true,
         options: [
           {
             id: 'ID_562710446',
             text: 'Lower (R) - Left Illiac Fossa',
             display_or: 'ବାମ ତଳ',
             display_hi: 'निम्न (R) – बायां इलिएक फोसा',
+            pop_up:
+              'Based on the event or timeframe, enter an estimated date for the last menstrual period',
+            pop_up_hi:
+              'घटना या समय सीमा के आधार पर, पिछले मासिक धर्म की अनुमानित तिथि दर्ज करें',
           },
           {
             id: 'ID_917293565',
