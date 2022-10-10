@@ -54,6 +54,17 @@ export class EdithealthdataComponent implements OnInit {
       this.negativeCondition = false;
     }
   }
+
+  onTextSelection(e: any) {
+    if (e.target.value.toLowerCase() == 'Associated symptoms'.toLowerCase()) {
+      this.positiveCondition = true;
+      this.negativeCondition = true;
+    } else {
+      this.positiveCondition = false;
+      this.negativeCondition = false;
+    }
+  }
+
   onSubmit() {
     this.onEdit.emit(this.healthdata);
   }

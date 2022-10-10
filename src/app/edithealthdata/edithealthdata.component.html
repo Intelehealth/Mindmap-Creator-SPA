@@ -9,7 +9,12 @@
         name="txtText"
         [(ngModel)]="healthdata.text"
         formControlName="txtText"
+        list="symptomList"
+        (change)="onTextSelection($event)"
       />
+      <datalist id="symptomList">
+        <option value="Associated symptoms"></option>
+      </datalist>
       <label for="txtText">Text</label>
     </div>
 
@@ -101,10 +106,9 @@
         [(ngModel)]="healthdata.age_min"
         #txtAgeMin
       >
-        <option *ngFor="let age of ages">{{ age }}</option>
+        <option *ngFor="let age of ages" [ngValue]="age">{{ age }}</option>
       </select>
       <label for="txtAgeMin">Age Min</label>
-      <!--<p class="text-danger">Min age must be less than Max age</p>-->
     </div>
     <div class="form-floating mb-3">
       <select
@@ -115,7 +119,7 @@
         #txtAgeMax
         formControlName="txtAgeMax"
       >
-        <option *ngFor="let age of ages">{{ age }}</option>
+        <option *ngFor="let age of ages" [ngValue]="age">{{ age }}</option>
       </select>
       <label for="txtAgeMax">Age Max</label>
       <p class="text-danger" *ngIf="myForm.hasError('invalidDateRange')">

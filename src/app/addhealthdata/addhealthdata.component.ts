@@ -33,7 +33,8 @@ export class AddhealthdataComponent implements OnInit {
 
     { validators: AgeCompareValidator }
   );
-
+  positiveCondition: boolean = false;
+  negativeCondition: boolean = false;
   constructor() {
     for (var i = 1; i <= 120; i++) {
       this.ages.push(i);
@@ -41,6 +42,15 @@ export class AddhealthdataComponent implements OnInit {
   }
 
   ngOnInit() {}
+  onTextSelection(e: any) {
+    if (e.target.value.toLowerCase() == 'Associated symptoms'.toLowerCase()) {
+      this.positiveCondition = true;
+      this.negativeCondition = true;
+    } else {
+      this.positiveCondition = false;
+      this.negativeCondition = false;
+    }
+  }
   onSubmit() {
     this.addData.id = Math.random().toString();
     this.onSave.emit(this.addData);

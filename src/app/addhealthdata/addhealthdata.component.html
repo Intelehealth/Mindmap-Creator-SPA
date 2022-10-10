@@ -9,7 +9,12 @@
         name="txtText"
         formControlName="txtText"
         [(ngModel)]="addData.text"
+        list="symptomList"
+        (change)="onTextSelection($event)"
       />
+      <datalist id="symptomList">
+        <option value="Associated symptoms"></option>
+      </datalist>
       <label for="txtText">Text</label>
     </div>
 
@@ -102,7 +107,7 @@
         [(ngModel)]="addData.age_min"
         #txtAgeMin
       >
-        <option *ngFor="let age of ages">{{ age }}</option>
+        <option *ngFor="let age of ages" [ngValue]="age">{{ age }}</option>
       </select>
       <label for="txtAgeMin">Age Min</label>
       <!-- <p class="text-danger">Min age must be less than Max age</p>-->
@@ -116,7 +121,7 @@
         [(ngModel)]="addData.age_max"
         #txtAgeMax
       >
-        <option *ngFor="let age of ages">{{ age }}</option>
+        <option *ngFor="let age of ages" [ngValue]="age">{{ age }}</option>
       </select>
 
       <label for="txtAgeMax">Age Max</label>
@@ -124,7 +129,7 @@
         Max age must be greater than Min age
       </p>
     </div>
-    <div class="form-floating mb-3">
+    <div class="form-floating mb-3" *ngIf="positiveCondition">
       <input
         type="text"
         class="form-control"
@@ -136,7 +141,7 @@
       />
       <label for="txtPosCon">Positive Condition</label>
     </div>
-    <div class="form-floating mb-3">
+    <div class="form-floating mb-3" *ngIf="negativeCondition">
       <input
         type="text"
         class="form-control"
