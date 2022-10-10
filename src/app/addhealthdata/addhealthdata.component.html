@@ -65,11 +65,12 @@
       <select
         name="txtInputType"
         id="txtInputType"
-        class="form-control"
+        class="form-select"
         formControlName="txtInputType"
         [(ngModel)]="addData.input_type"
+        placeholder="Input Type"
       >
-        <option value="number" selected="selected">number</option>
+        <option value="number">number</option>
         <option value="text">text</option>
         <option value="date">date</option>
         <option value="duration">duration</option>
@@ -82,7 +83,7 @@
       <select
         name="txtGender"
         id="txtGender"
-        class="form-control"
+        class="form-select"
         formControlName="txtGender"
         [(ngModel)]="addData.gender"
       >
@@ -96,7 +97,7 @@
       <select
         name="txtAgeMin"
         id="txtAgeMin"
-        class="form-control"
+        class="form-select"
         formControlName="txtAgeMin"
         [(ngModel)]="addData.age_min"
         #txtAgeMin
@@ -110,13 +111,14 @@
       <select
         name="txtAgeMax"
         id="txtAgeMax"
-        class="form-control"
+        class="form-select"
         formControlName="txtAgeMax"
         [(ngModel)]="addData.age_max"
         #txtAgeMax
       >
         <option *ngFor="let age of ages">{{ age }}</option>
       </select>
+
       <label for="txtAgeMax">Age Max</label>
       <p class="text-danger" *ngIf="myForm.hasError('invalidDateRange')">
         Max age must be greater than Min age
