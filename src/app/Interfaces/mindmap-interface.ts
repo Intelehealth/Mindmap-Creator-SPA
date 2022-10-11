@@ -14,8 +14,8 @@ export interface IMindMapData {
   language?: string;
   input_type?: string;
   gender?: string;
-  age_min?: string;
-  age_max?: string;
+  age_min?: number;
+  age_max?: number;
   pos_condition?: string;
   neg_condition?: string;
   children?: Array<IMindMapData>;

@@ -22,6 +22,8 @@ export class MindmapService {
         multi_choice: false,
         display_or: 'କୋଉଯାଗାରେ',
         exclude_from_multi_choice: true,
+        age_max: 120,
+        age_min: 50,
         options: [
           {
             id: 'ID_562710446',

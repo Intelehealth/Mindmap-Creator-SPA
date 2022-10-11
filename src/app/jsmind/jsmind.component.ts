@@ -174,6 +174,7 @@ export class JsmindComponent implements OnInit {
       if (reader.result) {
         let healthdata: IHealthData = JSON.parse(reader.result?.toString());
         let mmData = this.dataService.getMindMapData(healthdata);
+
         var mind = {
           meta: {
             name: 'sample',
