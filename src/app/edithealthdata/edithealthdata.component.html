@@ -35,6 +35,37 @@
 
     <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
+        <select
+          name="ddisRequired"
+          id="ddisRequired"
+          class="form-select"
+          formControlName="ddisRequired"
+          [(ngModel)]="healthdata.isRequired"
+          placeholder="Is Required"
+        >
+          <option [ngValue]="true">true</option>
+          <option [ngValue]="false">false</option>
+        </select>
+        <label for="ddisRequired">Is Required</label>
+      </div>
+      <div class="col-sm form-floating mb-3">
+        <select
+          name="ddMultiChoice"
+          id="ddMultiChoice"
+          class="form-select"
+          formControlName="ddMultiChoice"
+          [(ngModel)]="healthdata.multi_choice"
+          placeholder="Multi Choice"
+        >
+          <option [ngValue]="true">true</option>
+          <option [ngValue]="false">false</option>
+        </select>
+        <label for="ddMultiChoice">Multi Choice</label>
+      </div>
+    </div>
+
+    <div class="row form-floating mb-3">
+      <div class="col-sm form-floating mb-3">
         <input
           type="text"
           class="form-control"
@@ -57,6 +88,34 @@
           formControlName="txtDisplayHI"
         />
         <label for="txtDisplayHI">Display HI</label>
+      </div>
+    </div>
+
+    <div class="row form-floating mb-3">
+      <div class="col-sm form-floating mb-3">
+        <textarea
+          class="form-control"
+          id="txtpopup"
+          placeholder=""
+          name="txtpopup"
+          formControlName="txtpopup"
+          rows="3"
+          [(ngModel)]="healthdata.pop_up"
+        >
+        </textarea>
+        <label for="txtpopup">Pop Up</label>
+      </div>
+      <div class="col-sm form-floating mb-3">
+        <textarea
+          class="form-control"
+          id="txtpopuphi"
+          placeholder=""
+          name="txtpopuphi"
+          formControlName="txtpopuphi"
+          rows="3"
+          [(ngModel)]="healthdata.pop_up_hi"
+        ></textarea>
+        <label for="txtpopuphi">Pop Up HI</label>
       </div>
     </div>
 
@@ -140,6 +199,23 @@
         <label for="txtgender">Gender</label>
       </div>
       <div class="col-sm form-floating mb-3">
+        <select
+          name="ddExcludeMultiChoice"
+          id="ddExcludeMultiChoice"
+          class="form-select"
+          formControlName="ddExcludeMultiChoice"
+          [(ngModel)]="healthdata.exclude_from_multi_choice"
+          placeholder="Exclude From Multi Choice"
+        >
+          <option [ngValue]="true">true</option>
+          <option [ngValue]="false">false</option>
+        </select>
+        <label for="ddExcludeMultiChoice">Exclude From Multi Choice</label>
+      </div>
+    </div>
+
+    <div class="row form-floating mb-3">
+      <div class="col-sm form-floating mb-3">
         <input
           type="text"
           class="form-control"
@@ -152,6 +228,7 @@
         <label for="txtPPE">Perform Physical Exam</label>
       </div>
     </div>
+
     <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3" *ngIf="positiveCondition">
         <input

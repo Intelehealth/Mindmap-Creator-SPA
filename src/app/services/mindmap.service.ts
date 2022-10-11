@@ -19,7 +19,7 @@ export class MindmapService {
         text: 'Site',
         display: 'Which part of the abdomen do you feel pain?',
         isRequired: true,
-        multi_choice: true,
+        multi_choice: false,
         display_or: 'କୋଉଯାଗାରେ',
         exclude_from_multi_choice: true,
         options: [
@@ -28,6 +28,7 @@ export class MindmapService {
             text: 'Lower (R) - Left Illiac Fossa',
             display_or: 'ବାମ ତଳ',
             display_hi: 'निम्न (R) – बायां इलिएक फोसा',
+            exclude_from_multi_choice: false,
             pop_up:
               'Based on the event or timeframe, enter an estimated date for the last menstrual period',
             pop_up_hi:
@@ -46,6 +47,8 @@ export class MindmapService {
         id: 'ID_313791833',
         text: 'Duration',
         display: 'Since when have you had this symptom?',
+        isRequired: true,
+        multi_choice: false,
         display_or: 'କେବେଠାରୁ',
         language: '%',
         options: [
@@ -56,6 +59,7 @@ export class MindmapService {
             language: 'since',
             display_or: 'କେବେ ଠାରୁ ଲେଖ',
             display_hi: '( कब से है- दर्ज करें)',
+            exclude_from_multi_choice: true,
           },
         ],
         display_hi: 'आपको यह लक्षण कब से है?',
@@ -83,8 +87,13 @@ export class MindmapService {
       item.topic = healthdata.text;
       item.perform_physical_exam = healthdata.perform_physical_exam;
       item.display = healthdata.display;
+      item.isRequired = healthdata.isRequired;
+      item.multi_choice = healthdata.multi_choice;
+      item.exclude_from_multi_choice = healthdata.exclude_from_multi_choice;
       item.display_or = healthdata.display_or;
       item.display_hi = healthdata.display_hi;
+      item.pop_up = healthdata.pop_up;
+      item.pop_up_hi = healthdata.pop_up_hi;
       item.language = healthdata.language;
       item.input_type = healthdata.input_type;
       item.gender = healthdata.gender;
@@ -108,8 +117,13 @@ export class MindmapService {
       item.text = mmdata.topic;
       item.perform_physical_exam = mmdata.perform_physical_exam;
       item.display = mmdata.display;
+      item.isRequired = mmdata.isRequired;
+      item.multi_choice = mmdata.multi_choice;
+      item.exclude_from_multi_choice = mmdata.exclude_from_multi_choice;
       item.display_or = mmdata.display_or;
       item.display_hi = mmdata.display_hi;
+      item.pop_up = mmdata.pop_up;
+      item.pop_up_hi = mmdata.pop_up_hi;
       item.language = mmdata.language;
       item.input_type = mmdata.input_type;
       item.gender = mmdata.gender;
