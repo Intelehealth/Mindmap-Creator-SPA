@@ -195,4 +195,35 @@ export class JsmindComponent implements OnInit {
   zoomout() {
     this.mindMap.view.zoomOut();
   }
+  getHealthData(data?: any): IHealthData {
+    let item: IHealthData = { text: '' };
+    if (data) {
+      item.id = data.id;
+      item.text = data.text;
+      item.text = data.text;
+      item.perform_physical_exam = data['perform-physical-exam'];
+      item.display = data.display;
+      item.isRequired = data.isRequired;
+      item.multi_choice = data['multi-choice'];
+      item.exclude_from_multi_choice = data['exclude-from-multi-choice'];
+      item.display_or = data['display-or'];
+      item.display_hi = data['display-hi'];
+      item.pop_up = data['pop-up'];
+      item.pop_up_hi = data['pop-up-hi'];
+      item.language = data.language;
+      item.input_type = data['input-type'];
+      item.gender = data.gender;
+      item.age_min = data['age-min'];
+      item.age_max = data['age-max'];
+      item.pos_condition = data['pos-condition'];
+      item.neg_condition = data['neg-condition'];
+      item.options = [];
+      if (data.options && data.options.length > 0) {
+        data.options.forEach((element: any) => {
+          item.options?.push(this.getHealthData(element));
+        });
+      }
+    }
+    return item;
+  }
 }
