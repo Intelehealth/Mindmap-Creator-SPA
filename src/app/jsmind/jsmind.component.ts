@@ -172,7 +172,8 @@ export class JsmindComponent implements OnInit {
     reader.onload = () => {
       //console.log(reader.result);
       if (reader.result) {
-        let healthdata: IHealthData = JSON.parse(reader.result?.toString());
+        let data = JSON.parse(reader.result?.toString());
+        let healthdata: IHealthData = this.getHealthData(data);
         let mmData = this.dataService.getMindMapData(healthdata);
 
         var mind = {
