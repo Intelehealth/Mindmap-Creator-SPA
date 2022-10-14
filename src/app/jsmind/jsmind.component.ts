@@ -7,6 +7,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModaldialogComponent } from '../modaldialog/modaldialog.component';
 import { ModaladdhealthdataComponent } from '../modaladdhealthdata/modaladdhealthdata.component';
 import { ModaledithealthdataComponent } from '../modaledithealthdata/modaledithealthdata.component';
+import { FileService } from '../services/file.service';
 declare var jsMind: any;
 const options = {
   container: 'jsmind_container',
@@ -53,7 +54,8 @@ export class JsmindComponent implements OnInit {
   isShown: boolean = false;
   constructor(
     private dataService: MindmapService,
-    private _modalService: NgbModal
+    private _modalService: NgbModal,
+    private _fileService: FileService
   ) {}
 
   ngOnInit() {
@@ -159,72 +161,31 @@ export class JsmindComponent implements OnInit {
     var mind_data = this.mindMap.get_data('node_tree');
     var mind_name = mind_data.meta.name;
     var helth_data = this.dataService.getHealthData(mind_data.data);
-    var mind_str = JSON.stringify(helth_data, undefined, 4);
-    //jsMind.util.json.json2string(helth_data);
-    jsMind.util.file.save(mind_str, 'text/json', mind_name + '.json');
+    this._fileService.writeToFile(helth_data, jsMind.util.file, mind_name);
+    //jsMind.util.file.save(mind_str, 'text/json', mind_name + '.json');
   }
   handleFileInput(event: Event) {
     this.file = (event.target as HTMLInputElement).files?.item(0);
     this.readFile(this.file);
   }
-  readFile(file: File) {
-    var reader = new FileReader();
-    reader.onload = () => {
-      //console.log(reader.result);
-      if (reader.result) {
-        let data = JSON.parse(reader.result?.toString());
-        let healthdata: IHealthData = this.getHealthData(data);
-        let mmData = this.dataService.getMindMapData(healthdata);
-
-        var mind = {
-          meta: {
-            name: 'sample',
-            // author: 'hizzgdev@163.com',
-            // version: '0.2',
-          },
-          format: 'node_tree',
-          data: mmData,
-        };
-        this.mindMap.show(mind);
-      }
+  async readFile(file: File) {
+    let healthdata = await this._fileService.readFile(file);
+    let mmData = this.dataService.getMindMapData(healthdata);
+    var mind = {
+      meta: {
+        name: 'sample',
+        // author: 'hizzgdev@163.com',
+        // version: '0.2',
+      },
+      format: 'node_tree',
+      data: mmData,
     };
-    reader.readAsText(file);
+    this.mindMap.show(mind);
   }
   zoomin() {
     this.mindMap.view.zoomIn();
   }
   zoomout() {
     this.mindMap.view.zoomOut();
-  }
-  getHealthData(data?: any): IHealthData {
-    let item: IHealthData = { text: '' };
-    if (data) {
-      item.id = data.id;
-      item.text = data.text;
-      item.text = data.text;
-      item.perform_physical_exam = data['perform-physical-exam'];
-      item.display = data.display;
-      item.isRequired = data.isRequired;
-      item.multi_choice = data['multi-choice'];
-      item.exclude_from_multi_choice = data['exclude-from-multi-choice'];
-      item.display_or = data['display-or'];
-      item.display_hi = data['display-hi'];
-      item.pop_up = data['pop-up'];
-      item.pop_up_hi = data['pop-up-hi'];
-      item.language = data.language;
-      item.input_type = data['input-type'];
-      item.gender = data.gender;
-      item.age_min = data['age-min'];
-      item.age_max = data['age-max'];
-      item.pos_condition = data['pos-condition'];
-      item.neg_condition = data['neg-condition'];
-      item.options = [];
-      if (data.options && data.options.length > 0) {
-        data.options.forEach((element: any) => {
-          item.options?.push(this.getHealthData(element));
-        });
-      }
-    }
-    return item;
   }
 }
