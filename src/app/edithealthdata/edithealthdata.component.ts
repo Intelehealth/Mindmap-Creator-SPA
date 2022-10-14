@@ -32,8 +32,8 @@ export class EdithealthdataComponent implements OnInit {
       txtNegCon: new FormControl(),
       txtPPE: new FormControl(),
       ddExcludeMultiChoice: new FormControl(),
-      txtAgeMin: new FormControl('txtAgeMin', [Validators.required]),
-      txtAgeMax: new FormControl('txtAgeMax', [Validators.required]),
+      txtAgeMin: new FormControl('txtAgeMin'),
+      txtAgeMax: new FormControl('txtAgeMax'),
     },
 
     { validators: AgeCompareValidator }
