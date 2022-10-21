@@ -18,5 +18,6 @@ export interface IMindMapData {
   age_max?: number;
   pos_condition?: string;
   neg_condition?: string;
+  direction?: string;
   children?: Array<IMindMapData>;
 }

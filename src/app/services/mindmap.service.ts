@@ -105,8 +105,10 @@ export class MindmapService {
       item.neg_condition = healthdata.neg_condition;
       item.children = [];
       if (healthdata.options && healthdata.options.length > 0) {
-        healthdata.options.forEach((element) => {
-          item.children?.push(this.getMindMapData(element));
+        healthdata.options.forEach((element, index) => {
+          let mmdata = this.getMindMapData(element);
+          mmdata.direction = index % 2 === 0 ? 'left' : 'right';
+          item.children?.push(mmdata);
         });
       }
     }

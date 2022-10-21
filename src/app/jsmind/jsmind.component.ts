@@ -13,7 +13,8 @@ const options = {
   container: 'jsmind_container',
   theme: 'greensea',
   editable: true,
-  mode: 'side',
+  mode: 'full',
+  format: 'node_tree',
   support_html: true, // Does it support HTML elements in the node?
   view: {
     engine: 'canvas', // engine for drawing lines between nodes in the mindmap
@@ -188,4 +189,10 @@ export class JsmindComponent implements OnInit {
   zoomout() {
     this.mindMap.view.zoomOut();
   }
+  /* expandNode() {
+    this.mindMap.expand_all();
+  }
+  collapseNode() {
+    this.mindMap.collapse_all();
+  }*/
 }
