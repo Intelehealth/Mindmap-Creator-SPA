@@ -38,6 +38,17 @@ const options = {
       enable_dblclick_handle: true,
       enable_mousewheel_handle: true,
     },
+    mapping: {
+      // shortcut key mapping
+      addchild: 45, // <Insert>
+      addbrother: 13, // <Enter>
+      editnode: 113, // <F2>
+      delnode: 46, // <Delete>
+      left: 37, // <Left>
+      up: 38, // <Up>
+      right: 39, // <Right>
+      down: 40, // <Down>
+    },
   },
 };
 @Component({
@@ -74,6 +85,8 @@ export class JsmindComponent implements OnInit {
         data: data,
       };
       this.mindMap.show(mind);
+      var root = this.mindMap.get_root();
+      this.mindMap.set_node_color(root.id, '#EB9357', null);
     });
   }
   saveData(hdata: IHealthData) {
@@ -182,6 +195,8 @@ export class JsmindComponent implements OnInit {
       data: mmData,
     };
     this.mindMap.show(mind);
+    var root = this.mindMap.get_root();
+    this.mindMap.set_node_color(root.id, '#EB9357', null);
   }
   zoomin() {
     this.mindMap.view.zoomIn();
