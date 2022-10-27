@@ -79,14 +79,14 @@ export class JsmindComponent implements OnInit {
         meta: {
           name: 'sample',
           // author: 'hizzgdev@163.com',
-          // version: '0.2',
+          // version: '0.2',EB9357
         },
         format: 'node_tree',
         data: data,
       };
       this.mindMap.show(mind);
       var root = this.mindMap.get_root();
-      this.mindMap.set_node_color(root.id, '#EB9357', null);
+      this.mindMap.set_node_color(root.id, '#FFA500', null);
     });
   }
   saveData(hdata: IHealthData) {
@@ -196,7 +196,7 @@ export class JsmindComponent implements OnInit {
     };
     this.mindMap.show(mind);
     var root = this.mindMap.get_root();
-    this.mindMap.set_node_color(root.id, '#EB9357', null);
+    this.mindMap.set_node_color(root.id, '#FFA500', null);
   }
   zoomin() {
     this.mindMap.view.zoomIn();
