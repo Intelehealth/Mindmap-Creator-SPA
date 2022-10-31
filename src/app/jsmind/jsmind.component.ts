@@ -204,10 +204,10 @@ export class JsmindComponent implements OnInit {
   zoomout() {
     this.mindMap.view.zoomOut();
   }
-  /* expandNode() {
+  expandNode() {
     this.mindMap.expand_all();
   }
   collapseNode() {
     this.mindMap.collapse_all();
-  }*/
+  }
 }

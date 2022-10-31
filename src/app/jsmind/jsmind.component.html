@@ -1,17 +1,18 @@
 <div class="container">
   <nav class="navbar navbar-default fixed-top">
-    <div class="row mt-4 col">
-      <div class="input-group mb-5 col">
-        <input
-          type="file"
-          class="form-control"
-          id="inputGroupFile02"
-          (change)="handleFileInput($event)"
-        />
-        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+    <div class="row mt-4">
+      <div class="col-3">
+        <div class="input-group mb-5">
+          <input
+            type="file"
+            class="form-control"
+            id="inputGroupFile02"
+            (change)="handleFileInput($event)"
+          />
+          <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        </div>
       </div>
-
-      <div class="col">
+      <div class="col-9">
         <button
           type="button"
           id="btnAdd"
@@ -48,11 +49,11 @@
           <i class="bi bi-zoom-in"></i>
           Zoom in
         </button>
-        <button class="btn btn-primary" (click)="zoomout()">
+        <button class="btn btn-primary me-3" (click)="zoomout()">
           <i class="bi bi-zoom-out"></i>
           Zoom out
         </button>
-        <!--  <button
+        <button
           type="button"
           id="btnExpand"
           class="btn btn-primary me-3"
@@ -67,7 +68,7 @@
           (click)="collapseNode()"
         >
           Collapse node
-        </button>-->
+        </button>
       </div>
     </div>
   </nav>
