@@ -19,5 +19,12 @@ export interface IMindMapData {
   pos_condition?: string;
   neg_condition?: string;
   direction?: string;
+  citation?: string;
+  snomed?: string;
+  icd_10?: string;
+  loinc?: string;
+  job_aid_type?: string;
+  job_aid_file?: string;
+  associated_complaint?: string;
   children?: Array<IMindMapData>;
 }

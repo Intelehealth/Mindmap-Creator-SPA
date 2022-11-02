@@ -24,6 +24,13 @@ export class FileService {
     'age-max': 'age_max',
     'pos-condition': 'pos_condition',
     'neg-condition': 'neg_condition',
+    citation: 'citation',
+    snomed: 'snomed',
+    'icd-10': 'icd_10',
+    loinc: 'loinc',
+    'job-aid-type': 'job_aid_type',
+    'job-aid-file': 'job_aid_file',
+    'associated-complaint': 'associated_complaint',
   };
   constructor() {}
   public readFile(file: File): Promise<IHealthData> {

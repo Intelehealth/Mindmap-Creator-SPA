@@ -24,6 +24,13 @@ export class MindmapService {
         exclude_from_multi_choice: true,
         age_max: 120,
         age_min: 50,
+        citation: 'part of body',
+        snomed: '822998006-276140008',
+        icd_10: 'abdomen',
+        loinc: 'pain',
+        job_aid_type: 'image',
+        job_aid_file: 'jaundiceexample',
+        associated_complaint: 'Syncope',
         options: [
           {
             id: 'ID_562710446',
@@ -103,6 +110,13 @@ export class MindmapService {
       item.age_max = healthdata.age_max;
       item.pos_condition = healthdata.pos_condition;
       item.neg_condition = healthdata.neg_condition;
+      item.citation = healthdata.citation;
+      item.snomed = healthdata.snomed;
+      item.icd_10 = healthdata.icd_10;
+      item.loinc = healthdata.loinc;
+      item.job_aid_type = healthdata.job_aid_type;
+      item.job_aid_file = healthdata.job_aid_file;
+      item.associated_complaint = healthdata.associated_complaint;
       item.children = [];
       if (healthdata.options && healthdata.options.length > 0) {
         healthdata.options.forEach((element, index) => {
@@ -135,6 +149,13 @@ export class MindmapService {
       item.age_max = mmdata.age_max;
       item.pos_condition = mmdata.pos_condition;
       item.neg_condition = mmdata.neg_condition;
+      item.citation = mmdata.citation;
+      item.snomed = mmdata.snomed;
+      item.icd_10 = mmdata.icd_10;
+      item.loinc = mmdata.loinc;
+      item.job_aid_type = mmdata.job_aid_type;
+      item.job_aid_file = mmdata.job_aid_file;
+      item.associated_complaint = mmdata.associated_complaint;
       item.options = [];
       if (mmdata.children && mmdata.children.length > 0) {
         mmdata.children.forEach((element) => {

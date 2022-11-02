@@ -17,5 +17,12 @@ export interface IHealthData {
   age_max?: number;
   pos_condition?: string;
   neg_condition?: string;
+  citation?: string;
+  snomed?: string;
+  icd_10?: string;
+  loinc?: string;
+  job_aid_type?: string;
+  job_aid_file?: string;
+  associated_complaint?: string;
   options?: Array<IHealthData>;
 }
