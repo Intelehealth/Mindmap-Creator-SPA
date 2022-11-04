@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
 import { IHealthData } from '../Interfaces/ihealth-data';
 import { IMindMapData } from '../Interfaces/mindmap-interface';
 import { MindmapService } from '../services/mindmap.service';
@@ -64,6 +64,13 @@ export class JsmindComponent implements OnInit {
     text: '',
   };
   isShown: boolean = false;
+  @HostListener('window:beforeunload', ['$event']) unloadHandler(event: Event) {
+    let result = confirm('Changes you made may not be saved.');
+    if (result) {
+      // Do more processing...
+    }
+    event.returnValue = false; // stay on same page
+  }
   constructor(
     private dataService: MindmapService,
     private _modalService: NgbModal,

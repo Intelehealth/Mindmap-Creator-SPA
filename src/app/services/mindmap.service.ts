@@ -9,11 +9,11 @@ import { IHealthData } from '../Interfaces/ihealth-data';
 export class MindmapService {
   private mockData: IHealthData = {
     id: 'ID_1000991358',
-    text: 'Abdominal Pain',
+    text: 'Enter Text',
     perform_physical_exam:
       'Abdomen:Scars;Abdomen:Distension;Abdomen:Tenderness;Abdomen:Lumps;Abdomen:Rebound tenderness;Abdomen:Peristaltic sound;Physical Growth:Sexual Maturation;',
     display_or: 'ପେଟଯନ୍ତ୍ରଣା',
-    options: [
+    /* options: [
       {
         id: 'ID_210551359',
         text: 'Site',
@@ -73,7 +73,7 @@ export class MindmapService {
         ],
         display_hi: 'आपको यह लक्षण कब से है?',
       },
-    ],
+    ],*/
     display_hi: 'पेट दर्द ',
   };
   private dataSubject = new BehaviorSubject<IMindMapData>(

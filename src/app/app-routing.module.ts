@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { JsmindComponent } from './jsmind/jsmind.component';
+import { StartuppageComponent } from './startuppage/startuppage.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/startuppage-component', pathMatch: 'full' },
+  { path: 'startuppage-component', component: StartuppageComponent },
+  {
+    path: 'startuppage-component/jsmind-component',
+    component: JsmindComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

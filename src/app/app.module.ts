@@ -20,6 +20,7 @@ import { ModaldialogComponent } from './modaldialog/modaldialog.component';
 import { ModaladdhealthdataComponent } from './modaladdhealthdata/modaladdhealthdata.component';
 import { ModaledithealthdataComponent } from './modaledithealthdata/modaledithealthdata.component';
 import { EdithealthdataComponent } from './edithealthdata/edithealthdata.component';
+import { StartuppageComponent } from './startuppage/startuppage.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { EdithealthdataComponent } from './edithealthdata/edithealthdata.compone
     ModaladdhealthdataComponent,
     ModaledithealthdataComponent,
     EdithealthdataComponent,
+    StartuppageComponent,
   ],
   imports: [
     BrowserModule,
