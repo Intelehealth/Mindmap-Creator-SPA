@@ -8,6 +8,7 @@ import { ModaldialogComponent } from '../modaldialog/modaldialog.component';
 import { ModaladdhealthdataComponent } from '../modaladdhealthdata/modaladdhealthdata.component';
 import { ModaledithealthdataComponent } from '../modaledithealthdata/modaledithealthdata.component';
 import { FileService } from '../services/file.service';
+import { Router } from '@angular/router';
 declare var jsMind: any;
 const options = {
   container: 'jsmind_container',
@@ -57,6 +58,7 @@ const options = {
   styleUrls: ['./jsmind.component.css'],
 })
 export class JsmindComponent implements OnInit {
+  isNew: boolean = true;
   file?: any;
   mindMap: any;
   title = 'example-angular10';
@@ -74,14 +76,37 @@ export class JsmindComponent implements OnInit {
   constructor(
     private dataService: MindmapService,
     private _modalService: NgbModal,
-    private _fileService: FileService
-  ) {}
+    private _fileService: FileService,
+    private _router: Router
+  ) {
+    let show = this._router.getCurrentNavigation()?.extras.state;
+    if (show) {
+      this.isNew = show.isNew;
+    }
+  }
 
   ngOnInit() {
     this.mindMap = new jsMind(options);
   }
   ngAfterViewInit() {
-    this.dataService.$data.subscribe((data) => {
+    if (this.isNew) {
+      this.dataService.$data.subscribe((data) => {
+        var mind = {
+          meta: {
+            name: 'sample',
+            // author: 'hizzgdev@163.com',
+            // version: '0.2',EB9357
+          },
+          format: 'node_tree',
+          data: data,
+        };
+        this.mindMap.show(mind);
+        var root = this.mindMap.get_root();
+        this.mindMap.set_node_color(root.id, '#FFA500', null);
+      });
+    } else {
+      let data = this._fileService.getdata();
+      let mmData = this.dataService.getMindMapData(data);
       var mind = {
         meta: {
           name: 'sample',
@@ -89,12 +114,12 @@ export class JsmindComponent implements OnInit {
           // version: '0.2',EB9357
         },
         format: 'node_tree',
-        data: data,
+        data: mmData,
       };
       this.mindMap.show(mind);
       var root = this.mindMap.get_root();
       this.mindMap.set_node_color(root.id, '#FFA500', null);
-    });
+    }
   }
   saveData(hdata: IHealthData) {
     let mmData = this.dataService.getMindMapData(hdata);

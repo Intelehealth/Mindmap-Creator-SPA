@@ -5,18 +5,15 @@
   <div class="card">
     <div class="card-body">
       <div class="col">
-        <button
-          class="btn btn-primary"
-          type="button"
-          routerLink="jsmind-component"
-        >
+        <button class="btn btn-primary" type="button" routerLink="/jsmind">
           Create New Mindmap
         </button>
       </div>
       <div class="col mt-4">
-        <button class="btn btn-primary" type="file">
-          Open Existing Mindmap
-        </button>
+        <div class="upload-btn-wrapper">
+          <button class="btn">Open Existing Mindmap</button>
+          <input type="file" name="myfile" (change)="handleFileInput($event)" />
+        </div>
       </div>
     </div>
   </div>

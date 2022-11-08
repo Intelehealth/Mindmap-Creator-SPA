@@ -4,10 +4,10 @@ import { JsmindComponent } from './jsmind/jsmind.component';
 import { StartuppageComponent } from './startuppage/startuppage.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/startuppage-component', pathMatch: 'full' },
-  { path: 'startuppage-component', component: StartuppageComponent },
+  { path: '', redirectTo: '/startuppage', pathMatch: 'full' },
+  { path: 'startuppage', component: StartuppageComponent },
   {
-    path: 'startuppage-component/jsmind-component',
+    path: 'jsmind',
     component: JsmindComponent,
   },
 ];

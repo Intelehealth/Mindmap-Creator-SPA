@@ -32,6 +32,9 @@ export class FileService {
     'job-aid-file': 'job_aid_file',
     'associated-complaint': 'associated_complaint',
   };
+  globalData: IHealthData = {
+    text: '',
+  };
   constructor() {}
   public readFile(file: File): Promise<IHealthData> {
     var reader = new FileReader();
@@ -42,8 +45,8 @@ export class FileService {
           //console.log(reader.result);
           if (reader.result) {
             let data = JSON.parse(reader.result?.toString());
-            data = this.getHealthData(data);
-            resolve(data);
+            this.globalData = this.getHealthData(data);
+            resolve(this.globalData);
           }
         };
         reader.readAsText(file);
@@ -51,6 +54,10 @@ export class FileService {
         return reject(e);
       }
     });
+  }
+
+  public getdata(): IHealthData {
+    return this.globalData;
   }
   private getHealthData(data: any): IHealthData {
     let item: any = {
