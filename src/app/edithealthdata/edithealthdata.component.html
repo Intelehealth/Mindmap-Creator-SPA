@@ -18,120 +18,8 @@
         </datalist>
         <label for="txtText">Text</label>
       </div>
-
-      <div class="col-sm form-floating mb-3">
-        <input
-          type="text"
-          class="form-control"
-          id="txtDisplay"
-          placeholder=""
-          name="txtDisplay"
-          [(ngModel)]="healthdata.display"
-          formControlName="txtDisplay"
-        />
-        <label for="txtDisplay">Display</label>
-      </div>
     </div>
-
     <div class="row form-floating mb-3">
-      <div class="col-sm form-floating mb-3">
-        <select
-          name="ddisRequired"
-          id="ddisRequired"
-          class="form-select"
-          formControlName="ddisRequired"
-          [(ngModel)]="healthdata.isRequired"
-          placeholder="Is Required"
-        >
-          <option [ngValue]="true">true</option>
-          <option [ngValue]="false">false</option>
-        </select>
-        <label for="ddisRequired">Is Required</label>
-      </div>
-      <div class="col-sm form-floating mb-3">
-        <select
-          name="ddMultiChoice"
-          id="ddMultiChoice"
-          class="form-select"
-          formControlName="ddMultiChoice"
-          [(ngModel)]="healthdata.multi_choice"
-          placeholder="Multi Choice"
-        >
-          <option [ngValue]="true">true</option>
-          <option [ngValue]="false">false</option>
-        </select>
-        <label for="ddMultiChoice">Multi Choice</label>
-      </div>
-    </div>
-
-    <div class="row form-floating mb-3">
-      <div class="col-sm form-floating mb-3">
-        <input
-          type="text"
-          class="form-control"
-          id="txtDisplayOR"
-          placeholder=""
-          name="txtDisplayOR"
-          [(ngModel)]="healthdata.display_or"
-          formControlName="txtDisplayOR"
-        />
-        <label for="txtDisplayOR">Display OR</label>
-      </div>
-      <div class="col-sm form-floating mb-3">
-        <input
-          type="text"
-          class="form-control"
-          id="txtDisplayHI"
-          placeholder=""
-          name="txtDisplayHI"
-          [(ngModel)]="healthdata.display_hi"
-          formControlName="txtDisplayHI"
-        />
-        <label for="txtDisplayHI">Display HI</label>
-      </div>
-    </div>
-
-    <div class="row form-floating mb-3">
-      <div class="col-sm form-floating mb-3">
-        <textarea
-          class="form-control"
-          id="txtpopup"
-          placeholder=""
-          name="txtpopup"
-          formControlName="txtpopup"
-          rows="3"
-          [(ngModel)]="healthdata.pop_up"
-        >
-        </textarea>
-        <label for="txtpopup">Pop Up</label>
-      </div>
-      <div class="col-sm form-floating mb-3">
-        <textarea
-          class="form-control"
-          id="txtpopuphi"
-          placeholder=""
-          name="txtpopuphi"
-          formControlName="txtpopuphi"
-          rows="3"
-          [(ngModel)]="healthdata.pop_up_hi"
-        ></textarea>
-        <label for="txtpopuphi">Pop Up HI</label>
-      </div>
-    </div>
-
-    <div class="row form-floating mb-3">
-      <div class="col-sm form-floating mb-3">
-        <input
-          type="text"
-          class="form-control"
-          id="txtLanguage"
-          placeholder=""
-          name="txtLanguage"
-          [(ngModel)]="healthdata.language"
-          formControlName="txtLanguage"
-        />
-        <label for="txtLanguage">Language</label>
-      </div>
       <div class="col-sm form-floating mb-3">
         <select
           name="txtInputType"
@@ -148,6 +36,20 @@
           <option value="area">area</option>
         </select>
         <label for="txtInputType">Input Type</label>
+      </div>
+      <div class="col-sm form-floating mb-3">
+        <select
+          name="txtGender"
+          id="txtGender"
+          class="form-select"
+          [(ngModel)]="healthdata.gender"
+          formControlName="txtGender"
+        >
+          <option value="male" selected="selected">male</option>
+          <option value="female">female</option>
+          <option value="other">other</option>
+        </select>
+        <label for="txtgender">Gender</label>
       </div>
     </div>
 
@@ -182,22 +84,38 @@
         </p>
       </div>
     </div>
-
     <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
         <select
-          name="txtGender"
-          id="txtGender"
+          name="ddisRequired"
+          id="ddisRequired"
           class="form-select"
-          [(ngModel)]="healthdata.gender"
-          formControlName="txtGender"
+          formControlName="ddisRequired"
+          [(ngModel)]="healthdata.isRequired"
+          placeholder="Is Required"
         >
-          <option value="male" selected="selected">male</option>
-          <option value="female">female</option>
-          <option value="other">other</option>
+          <option [ngValue]="true">true</option>
+          <option [ngValue]="false">false</option>
         </select>
-        <label for="txtgender">Gender</label>
+        <label for="ddisRequired">Is Required</label>
       </div>
+      <div class="col-sm form-floating mb-3">
+        <select
+          name="ddMultiChoice"
+          id="ddMultiChoice"
+          class="form-select"
+          formControlName="ddMultiChoice"
+          [(ngModel)]="healthdata.multi_choice"
+          placeholder="Multi Choice"
+        >
+          <option [ngValue]="true">true</option>
+          <option [ngValue]="false">false</option>
+        </select>
+        <label for="ddMultiChoice">Multi Choice</label>
+      </div>
+    </div>
+
+    <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
         <select
           name="ddExcludeMultiChoice"
@@ -212,9 +130,33 @@
         </select>
         <label for="ddExcludeMultiChoice">Exclude From Multi Choice</label>
       </div>
+      <div class="col-sm form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="txtDisplay"
+          placeholder=""
+          name="txtDisplay"
+          [(ngModel)]="healthdata.display"
+          formControlName="txtDisplay"
+        />
+        <label for="txtDisplay">Display</label>
+      </div>
     </div>
 
     <div class="row form-floating mb-3">
+      <div class="col-sm form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="txtLanguage"
+          placeholder=""
+          name="txtLanguage"
+          [(ngModel)]="healthdata.language"
+          formControlName="txtLanguage"
+        />
+        <label for="txtLanguage">Language</label>
+      </div>
       <div class="col-sm form-floating mb-3">
         <input
           type="text"
@@ -227,46 +169,8 @@
         />
         <label for="txtPPE">Perform Physical Exam</label>
       </div>
-      <div class="col-sm form-floating mb-3">
-        <textarea
-          class="form-control"
-          id="txtcitation"
-          placeholder=""
-          name="txtcitation"
-          formControlName="txtcitation"
-          rows="3"
-          [(ngModel)]="healthdata.citation"
-        >
-        </textarea>
-        <label for="txtpopup">Citation</label>
-      </div>
     </div>
-    <div class="row form-floating mb-3">
-      <div class="col-sm form-floating mb-3">
-        <input
-          type="text"
-          class="form-control"
-          id="txtsnomed"
-          placeholder=""
-          name="txtsnomed"
-          formControlName="txtsnomed"
-          [(ngModel)]="healthdata.snomed"
-        />
-        <label for="txtsnomed">Snomed</label>
-      </div>
-      <div class="col-sm form-floating mb-3">
-        <input
-          type="text"
-          class="form-control"
-          id="txticd"
-          placeholder=""
-          name="txticd"
-          formControlName="txticd"
-          [(ngModel)]="healthdata.icd_10"
-        />
-        <label for="txticd">ICD-10</label>
-      </div>
-    </div>
+
     <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
         <input
@@ -295,6 +199,100 @@
     </div>
     <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
+        <textarea
+          class="form-control"
+          id="txtpopup"
+          placeholder=""
+          name="txtpopup"
+          formControlName="txtpopup"
+          rows="3"
+          [(ngModel)]="healthdata.pop_up"
+        >
+        </textarea>
+        <label for="txtpopup">Pop Up</label>
+      </div>
+      <div class="col-sm form-floating mb-3">
+        <textarea
+          class="form-control"
+          id="txtpopuphi"
+          placeholder=""
+          name="txtpopuphi"
+          formControlName="txtpopuphi"
+          rows="3"
+          [(ngModel)]="healthdata.pop_up_hi"
+        ></textarea>
+        <label for="txtpopuphi">Pop Up HI</label>
+      </div>
+    </div>
+
+    <div class="row form-floating mb-3">
+      <div class="col-sm form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="txtDisplayHI"
+          placeholder=""
+          name="txtDisplayHI"
+          [(ngModel)]="healthdata.display_hi"
+          formControlName="txtDisplayHI"
+        />
+        <label for="txtDisplayHI">Display HI</label>
+      </div>
+      <div class="col-sm form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="txtDisplayOR"
+          placeholder=""
+          name="txtDisplayOR"
+          [(ngModel)]="healthdata.display_or"
+          formControlName="txtDisplayOR"
+        />
+        <label for="txtDisplayOR">Display OR</label>
+      </div>
+    </div>
+
+    <div class="row form-floating mb-3">
+      <div class="col-sm form-floating mb-3">
+        <textarea
+          class="form-control"
+          id="txtcitation"
+          placeholder=""
+          name="txtcitation"
+          formControlName="txtcitation"
+          rows="3"
+          [(ngModel)]="healthdata.citation"
+        >
+        </textarea>
+        <label for="txtpopup">Citation</label>
+      </div>
+      <div class="col-sm form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="txtsnomed"
+          placeholder=""
+          name="txtsnomed"
+          formControlName="txtsnomed"
+          [(ngModel)]="healthdata.snomed"
+        />
+        <label for="txtsnomed">Snomed</label>
+      </div>
+    </div>
+    <div class="row form-floating mb-3">
+      <div class="col-sm form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="txticd"
+          placeholder=""
+          name="txticd"
+          formControlName="txticd"
+          [(ngModel)]="healthdata.icd_10"
+        />
+        <label for="txticd">ICD-10</label>
+      </div>
+      <div class="col-sm form-floating mb-3">
         <input
           type="text"
           class="form-control"
@@ -306,6 +304,9 @@
         />
         <label for="txtloinc">LOINC</label>
       </div>
+    </div>
+
+    <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
         <input
           type="text"
