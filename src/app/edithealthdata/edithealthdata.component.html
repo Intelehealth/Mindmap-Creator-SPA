@@ -374,6 +374,13 @@
       <button type="submit" class="btn btn-primary btn-lg" [disabled]="!myForm.valid">
         Save
       </button>
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-lg ms-3"
+        (click)="modal.close()"
+      >
+        Cancel
+      </button>
     </div>
   </div>
 </form>

@@ -160,7 +160,7 @@ export class JsmindComponent implements OnInit {
       return;
     }
 
-    let data = selectedNode.data;
+    let data = {...selectedNode.data};
     let modal = this._modalService.open(ModaledithealthdataComponent, {
       backdrop: true,
       size: 'xl',

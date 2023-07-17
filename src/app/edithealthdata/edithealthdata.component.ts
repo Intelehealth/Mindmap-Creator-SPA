@@ -3,6 +3,7 @@ import { IHealthData } from '../Interfaces/ihealth-data';
 import { Result, Ok, Err } from '@sniptt/monads';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AgeCompareValidator } from '../validators/agecomparevalidator';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-edithealthdata',
   templateUrl: './edithealthdata.component.html',
@@ -49,7 +50,7 @@ export class EdithealthdataComponent implements OnInit {
 
   positiveCondition: boolean = false;
   negativeCondition: boolean = false;
-  constructor() {
+  constructor( public modal: NgbActiveModal) {
     for (var i = 1; i <= 120; i++) {
       this.ages.push(i);
     }
