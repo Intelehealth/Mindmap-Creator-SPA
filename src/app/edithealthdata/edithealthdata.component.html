@@ -19,6 +19,8 @@
         <label for="txtText">Text</label>
       </div>
     </div>
+    <h6>Node Rules</h6>
+    <hr/>
     <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
         <select
@@ -97,7 +99,7 @@
           <option [ngValue]="true">true</option>
           <option [ngValue]="false">false</option>
         </select>
-        <label for="ddisRequired">Is Required</label>
+        <label for="ddisRequired">Is this question Required?</label>
       </div>
       <div class="col-sm form-floating mb-3">
         <select
@@ -140,12 +142,12 @@
           [(ngModel)]="healthdata.display"
           formControlName="txtDisplay"
         />
-        <label for="txtDisplay">Display</label>
+        <label for="txtDisplay">Display (English)</label>
       </div>
     </div>
 
     <div class="row form-floating mb-3">
-      <div class="col-sm form-floating mb-3">
+      <div class="col-6 form-floating mb-3">
         <input
           type="text"
           class="form-control"
@@ -155,8 +157,12 @@
           [(ngModel)]="healthdata.language"
           formControlName="txtLanguage"
         />
-        <label for="txtLanguage">Language</label>
+        <label for="txtLanguage">Language to be shown in history note</label>
       </div>
+    </div>
+    <h6>Triggers</h6>
+    <hr/>
+    <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
         <input
           type="text"
@@ -169,9 +175,6 @@
         />
         <label for="txtPPE">Perform Physical Exam</label>
       </div>
-    </div>
-
-    <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
         <input
           type="text"
@@ -184,7 +187,9 @@
         />
         <label for="txtjobaidtype">Job Aid Type</label>
       </div>
-      <div class="col-sm form-floating mb-3">
+    </div>
+    <div class="row form-floating mb-3">
+      <div class="col-6 form-floating mb-3">
         <input
           type="text"
           class="form-control"
@@ -197,6 +202,8 @@
         <label for="txtjobaidfile">Job Aid File</label>
       </div>
     </div>
+    <h6>Alerts</h6>
+    <hr/>
     <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
         <textarea
@@ -207,11 +214,24 @@
           formControlName="txtpopup"
           rows="3"
           [(ngModel)]="healthdata.pop_up"
-        >
-        </textarea>
+        ></textarea>
         <label for="txtpopup">Pop Up</label>
       </div>
       <div class="col-sm form-floating mb-3">
+        <textarea
+          class="form-control"
+          id="txtpopupor"
+          placeholder=""
+          name="txtpopupor"
+          formControlName="txtpopupor"
+          rows="3"
+          [(ngModel)]="healthdata.pop_up_or"
+        ></textarea>
+        <label for="txtpopupor">Pop Up (Odiya)</label>
+      </div>
+    </div>
+    <div class="row form-floating mb-3">
+      <div class="col-6 form-floating mb-3">
         <textarea
           class="form-control"
           id="txtpopuphi"
@@ -221,10 +241,11 @@
           rows="3"
           [(ngModel)]="healthdata.pop_up_hi"
         ></textarea>
-        <label for="txtpopuphi">Pop Up HI</label>
+        <label for="txtpopuphi">Pop Up (Hindi)</label>
       </div>
     </div>
-
+    <h6>Translations</h6>
+    <hr/>
     <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
         <input
@@ -236,7 +257,7 @@
           [(ngModel)]="healthdata.display_hi"
           formControlName="txtDisplayHI"
         />
-        <label for="txtDisplayHI">Display HI</label>
+        <label for="txtDisplayHI">Display (Hindi)</label>
       </div>
       <div class="col-sm form-floating mb-3">
         <input
@@ -248,10 +269,11 @@
           [(ngModel)]="healthdata.display_or"
           formControlName="txtDisplayOR"
         />
-        <label for="txtDisplayOR">Display OR</label>
+        <label for="txtDisplayOR">Display (Odiya)</label>
       </div>
     </div>
-
+    <h6>Citation</h6>
+    <hr/>
     <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3">
         <textarea
@@ -348,8 +370,8 @@
       </div>
     </div>
 
-    <div class="form-floating mb-3">
-      <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">
+    <div class="form-floating mb-3 text-center">
+      <button type="submit" class="btn btn-primary btn-lg" [disabled]="!myForm.valid">
         Save
       </button>
     </div>

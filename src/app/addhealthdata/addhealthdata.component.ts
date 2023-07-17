@@ -25,6 +25,7 @@ export class AddhealthdataComponent implements OnInit {
       txtDisplayHI: new FormControl(),
       txtpopup: new FormControl(),
       txtpopuphi: new FormControl(),
+      txtpopupor: new FormControl(),
       txtLanguage: new FormControl(),
       txtInputType: new FormControl(),
       txtGender: new FormControl(),

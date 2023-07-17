@@ -24,6 +24,7 @@ export class EdithealthdataComponent implements OnInit {
       txtDisplayOR: new FormControl(),
       txtDisplayHI: new FormControl(),
       txtpopup: new FormControl(),
+      txtpopupor: new FormControl(),
       txtpopuphi: new FormControl(),
       txtLanguage: new FormControl(),
       txtInputType: new FormControl(),

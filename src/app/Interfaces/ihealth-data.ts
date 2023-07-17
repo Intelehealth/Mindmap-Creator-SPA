@@ -9,6 +9,7 @@ export interface IHealthData {
   display_or?: string;
   display_hi?: string;
   pop_up?: string;
+  pop_up_or?: string;
   pop_up_hi?: string;
   language?: string;
   input_type?: string;
