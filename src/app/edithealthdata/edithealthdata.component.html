@@ -18,6 +18,18 @@
         </datalist>
         <label for="txtText">Text</label>
       </div>
+      <div class="col-sm form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="txtassocomplaint"
+          placeholder=""
+          name="txtassocomplaint"
+          formControlName="txtassocomplaint"
+          [(ngModel)]="healthdata.associated_complaint"
+        />
+        <label for="txtassocomplaint">Associated Complaint</label>
+      </div>
     </div>
     <h6>Node Rules</h6>
     <hr/>
@@ -327,22 +339,6 @@
         <label for="txtloinc">LOINC</label>
       </div>
     </div>
-
-    <div class="row form-floating mb-3">
-      <div class="col-sm form-floating mb-3">
-        <input
-          type="text"
-          class="form-control"
-          id="txtassocomplaint"
-          placeholder=""
-          name="txtassocomplaint"
-          formControlName="txtassocomplaint"
-          [(ngModel)]="healthdata.associated_complaint"
-        />
-        <label for="txtassocomplaint">Associated Complaint</label>
-      </div>
-    </div>
-
     <div class="row form-floating mb-3">
       <div class="col-sm form-floating mb-3" *ngIf="positiveCondition">
         <input
