@@ -3,3 +3,14 @@
     width: 100%;
     height: 800px;
   }
+
+.navbar-buttons{
+  background-color: #1abc9c;
+  border: unset;
+  color: white;
+  font-weight: 600;
+}
+
+.navbar{
+  background-color: #2E1E91;
+}

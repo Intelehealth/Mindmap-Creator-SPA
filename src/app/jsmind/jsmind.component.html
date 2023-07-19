@@ -1,5 +1,5 @@
 <div class="">
-  <nav class="navbar navbar-default fixed-top bg-black">
+  <nav class="navbar navbar-default fixed-top">
     <div class="row p-3 w-100">
       <!--<div class="col-3">
         <div class="input-group mb-5">
@@ -16,7 +16,7 @@
         <button
           type="button"
           id="btnAdd"
-          class="btn btn-primary me-3"
+          class="btn navbar-buttons me-3"
           (click)="addShow()"
         >
           Add Child node
@@ -24,7 +24,7 @@
         <button
           type="button"
           id="btnEdit"
-          class="btn btn-primary me-3"
+          class="btn navbar-buttons me-3"
           (click)="editNodeData()"
         >
           Edit attributes
@@ -32,7 +32,7 @@
         <button
           type="button"
           id="btnDelete"
-          class="btn btn-primary me-3"
+          class="btn navbar-buttons me-3"
           (click)="deleteNode()"
         >
           Delete node
@@ -40,23 +40,23 @@
         <button
           type="button"
           id="btnJson"
-          class="btn btn-info me-3"
+          class="btn navbar-buttons me-3"
           (click)="getJsonData()"
         >
           Download JSON
         </button>
-        <button class="btn btn-primary me-3" (click)="zoomin()">
+        <button class="btn navbar-buttons me-3" (click)="zoomin()">
           <i class="bi bi-zoom-in"></i>
           Zoom in
         </button>
-        <button class="btn btn-primary me-3" (click)="zoomout()">
+        <button class="btn navbar-buttons me-3" (click)="zoomout()">
           <i class="bi bi-zoom-out"></i>
           Zoom out
         </button>
         <button
           type="button"
           id="btnExpand"
-          class="btn btn-primary me-3"
+          class="btn navbar-buttons me-3"
           (click)="expandNode()"
         >
           Expand node
@@ -64,7 +64,7 @@
         <button
           type="button"
           id="btnCollapse"
-          class="btn btn-primary me-3"
+          class="btn navbar-buttons me-3"
           (click)="collapseNode()"
         >
           Collapse node
