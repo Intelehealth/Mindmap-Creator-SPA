@@ -17,6 +17,7 @@ export class FileService {
     'display-hi': 'display_hi',
     'pop-up': 'pop_up',
     'pop-up-hi': 'pop_up_hi',
+    'pop-up-or': 'pop_up_or',
     language: 'language',
     'input-type': 'input_type',
     gender: 'gender',

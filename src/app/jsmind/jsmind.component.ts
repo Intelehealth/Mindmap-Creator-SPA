@@ -160,7 +160,7 @@ export class JsmindComponent implements OnInit {
       return;
     }
 
-    let data = {...selectedNode.data};
+    let data = {topic: selectedNode.topic, ...selectedNode.data};
     let modal = this._modalService.open(ModaledithealthdataComponent, {
       backdrop: true,
       size: 'xl',
@@ -196,10 +196,14 @@ export class JsmindComponent implements OnInit {
     if (!selectedNode) {
       alert('Please Select Node to delete');
     } else {
-      let answer = window.confirm('Are you sure you want to delete node?');
-      if (answer) {
-        this.mindMap.remove_node(selectedNode);
-        // alert('Node deleted');
+      if(selectedNode.isroot){
+        alert("Parent Node cannot be deleted");
+      } else {
+        let answer = window.confirm('Are you sure you want to delete node?');
+        if (answer) {
+          this.mindMap.remove_node(selectedNode);
+          // alert('Node deleted');
+        }
       }
     }
   }

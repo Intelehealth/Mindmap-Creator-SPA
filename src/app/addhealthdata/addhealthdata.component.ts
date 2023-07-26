@@ -12,7 +12,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class AddhealthdataComponent implements OnInit {
   @Output() onSave = new EventEmitter<IHealthData>();
   addData: IHealthData = {
-    text: '',
+    text: 'Enter Text',
   };
   ages: Array<number> = [];
 

@@ -57,7 +57,7 @@ export class EdithealthdataComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.healthdata);
+    if(this.healthdata.topic)this.healthdata.text = this.healthdata.topic;
     if (
       this.healthdata.text.toLowerCase() == 'Associated symptoms'.toLowerCase()
     ) {

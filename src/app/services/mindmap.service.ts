@@ -103,6 +103,7 @@ export class MindmapService {
       item.display_hi = healthdata.display_hi;
       item.pop_up = healthdata.pop_up;
       item.pop_up_hi = healthdata.pop_up_hi;
+      item.pop_up_or = healthdata.pop_up_or;
       item.language = healthdata.language;
       item.input_type = healthdata.input_type;
       item.gender = healthdata.gender;
@@ -142,6 +143,7 @@ export class MindmapService {
       item.display_hi = mmdata.display_hi;
       item.pop_up = mmdata.pop_up;
       item.pop_up_hi = mmdata.pop_up_hi;
+      item.pop_up_or = mmdata.pop_up_or;
       item.language = mmdata.language;
       item.input_type = mmdata.input_type;
       item.gender = mmdata.gender;

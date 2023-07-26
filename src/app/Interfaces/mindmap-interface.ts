@@ -11,6 +11,7 @@ export interface IMindMapData {
   display_hi?: string;
   pop_up?: string;
   pop_up_hi?: string;
+  pop_up_or?: string;
   language?: string;
   input_type?: string;
   gender?: string;

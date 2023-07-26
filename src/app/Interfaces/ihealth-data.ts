@@ -1,6 +1,7 @@
 export interface IHealthData {
   id?: string;
   text: string;
+  topic?: string;
   perform_physical_exam?: string;
   display?: string;
   isRequired?: boolean;
@@ -9,8 +10,8 @@ export interface IHealthData {
   display_or?: string;
   display_hi?: string;
   pop_up?: string;
-  pop_up_or?: string;
   pop_up_hi?: string;
+  pop_up_or?: string;
   language?: string;
   input_type?: string;
   gender?: string;
