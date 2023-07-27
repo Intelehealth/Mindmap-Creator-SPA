@@ -5,10 +5,14 @@
   }
 
 .navbar-buttons{
-  background-color: #1abc9c;
   border: unset;
   color: white;
   font-weight: 600;
+  padding: 10px;
+}
+
+.navbar-buttons:hover{
+  background: #4B39B7;
 }
 
 .navbar{

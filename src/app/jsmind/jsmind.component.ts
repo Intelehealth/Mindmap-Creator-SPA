@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 declare var jsMind: any;
 const options = {
   container: 'jsmind_container',
-  theme: 'greensea',
   editable: true,
   mode: 'full',
   format: 'node_tree',

@@ -376,12 +376,12 @@
     </div>
 
     <div class="form-floating mb-3 text-center">
-      <button type="submit" class="btn btn-primary btn-lg" [disabled]="!myForm.valid">
+      <button type="submit" class="btn btn-primary btn-lg popup-save-btn" [disabled]="!myForm.valid">
         Save
       </button>
       <button
         type="button"
-        class="btn btn-outline-secondary btn-lg ms-3"
+        class="btn btn-outline-secondary btn-lg popup-cancel-btn ms-3"
         (click)="modal.close()"
       >
         Cancel
