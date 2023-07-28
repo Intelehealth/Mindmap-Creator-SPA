@@ -10,6 +10,7 @@
           name="txtText"
           [(ngModel)]="healthdata.text"
           formControlName="txtText"
+          title="{{tooltips.txtText}}"
           list="symptomList"
           (change)="onTextSelection($event)"
           required
@@ -31,6 +32,7 @@
           placeholder=""
           name="txtassocomplaint"
           formControlName="txtassocomplaint"
+          title="{{tooltips.txtassocomplaint}}"
           [(ngModel)]="healthdata.associated_complaint"
         />
         <label for="txtassocomplaint">Associated Complaint</label>
@@ -46,6 +48,7 @@
           class="form-select"
           [(ngModel)]="healthdata.input_type"
           formControlName="txtInputType"
+          title="{{tooltips.txtInputType}}"
         >
           <option value="number" selected="selected">number</option>
           <option value="text">text</option>
@@ -63,6 +66,7 @@
           class="form-select"
           [(ngModel)]="healthdata.gender"
           formControlName="txtGender"
+          title="{{tooltips.txtGender}}"
         >
           <option value="male" selected="selected">male</option>
           <option value="female">female</option>
@@ -79,6 +83,7 @@
           id="txtAgeMin"
           class="form-select"
           formControlName="txtAgeMin"
+          title="{{tooltips.txtAgeMin}}"
           [(ngModel)]="healthdata.age_min"
           #txtAgeMin
         >
@@ -94,6 +99,7 @@
           [(ngModel)]="healthdata.age_max"
           #txtAgeMax
           formControlName="txtAgeMax"
+          title="{{tooltips.txtAgeMax}}"
         >
           <option *ngFor="let age of ages" [ngValue]="age">{{ age }}</option>
         </select>
@@ -110,6 +116,7 @@
           id="ddisRequired"
           class="form-select"
           formControlName="ddisRequired"
+          title="{{tooltips.ddisRequired}}"
           [(ngModel)]="healthdata.isRequired"
           placeholder="Is Required"
         >
@@ -124,6 +131,7 @@
           id="ddMultiChoice"
           class="form-select"
           formControlName="ddMultiChoice"
+          title="{{tooltips.ddMultiChoice}}"
           [(ngModel)]="healthdata.multi_choice"
           placeholder="Multi Choice"
         >
@@ -141,6 +149,7 @@
           id="ddExcludeMultiChoice"
           class="form-select"
           formControlName="ddExcludeMultiChoice"
+          title="{{tooltips.ddExcludeMultiChoice}}"
           [(ngModel)]="healthdata.exclude_from_multi_choice"
           placeholder="Exclude From Multi Choice"
         >
@@ -158,6 +167,7 @@
           name="txtDisplay"
           [(ngModel)]="healthdata.display"
           formControlName="txtDisplay"
+          title="{{tooltips.txtDisplay}}"
         />
         <label for="txtDisplay">Display (English)</label>
       </div>
@@ -173,6 +183,7 @@
           name="txtLanguage"
           [(ngModel)]="healthdata.language"
           formControlName="txtLanguage"
+          title="{{tooltips.txtLanguage}}"
         />
         <label for="txtLanguage">Language to be shown in history note</label>
       </div>
@@ -189,6 +200,7 @@
           name="txtPPE"
           [(ngModel)]="healthdata.perform_physical_exam"
           formControlName="txtPPE"
+          title="{{tooltips.txtPPE}}"
         />
         <label for="txtPPE">Perform Physical Exam</label>
       </div>
@@ -200,6 +212,7 @@
           placeholder=""
           name="txtjobaidtype"
           formControlName="txtjobaidtype"
+          title="{{tooltips.txtjobaidtype}}"
           [(ngModel)]="healthdata.job_aid_type"
         />
         <label for="txtjobaidtype">Job Aid Type</label>
@@ -214,6 +227,7 @@
           placeholder=""
           name="txtjobaidfile"
           formControlName="txtjobaidfile"
+          title="{{tooltips.txtjobaidfile}}"
           [(ngModel)]="healthdata.job_aid_file"
         />
         <label for="txtjobaidfile">Job Aid File</label>
@@ -229,6 +243,7 @@
           placeholder=""
           name="txtpopup"
           formControlName="txtpopup"
+          title="{{tooltips.txtpopup}}"
           rows="3"
           [(ngModel)]="healthdata.pop_up"
         ></textarea>
@@ -241,6 +256,7 @@
           placeholder=""
           name="txtpopupor"
           formControlName="txtpopupor"
+          title="{{tooltips.txtpopupor}}"
           rows="3"
           [(ngModel)]="healthdata.pop_up_or"
         ></textarea>
@@ -255,6 +271,7 @@
           placeholder=""
           name="txtpopuphi"
           formControlName="txtpopuphi"
+          title="{{tooltips.txtpopuphi}}"
           rows="3"
           [(ngModel)]="healthdata.pop_up_hi"
         ></textarea>
@@ -273,6 +290,7 @@
           name="txtDisplayHI"
           [(ngModel)]="healthdata.display_hi"
           formControlName="txtDisplayHI"
+          title="{{tooltips.txtDisplayHI}}"
         />
         <label for="txtDisplayHI">Display (Hindi)</label>
       </div>
@@ -285,6 +303,7 @@
           name="txtDisplayOR"
           [(ngModel)]="healthdata.display_or"
           formControlName="txtDisplayOR"
+          title="{{tooltips.txtDisplayOR}}"
         />
         <label for="txtDisplayOR">Display (Odiya)</label>
       </div>
@@ -299,6 +318,7 @@
           placeholder=""
           name="txtcitation"
           formControlName="txtcitation"
+          title="{{tooltips.txtcitation}}"
           rows="3"
           [(ngModel)]="healthdata.citation"
         >
@@ -313,6 +333,7 @@
           placeholder=""
           name="txtsnomed"
           formControlName="txtsnomed"
+          title="{{tooltips.txtsnomed}}"
           [(ngModel)]="healthdata.snomed"
         />
         <label for="txtsnomed">Snomed</label>
@@ -327,6 +348,7 @@
           placeholder=""
           name="txticd"
           formControlName="txticd"
+          title="{{tooltips.txticd}}"
           [(ngModel)]="healthdata.icd_10"
         />
         <label for="txticd">ICD-10</label>
@@ -339,6 +361,7 @@
           placeholder=""
           name="txtloinc"
           formControlName="txtloinc"
+          title="{{tooltips.txtloinc}}"
           [(ngModel)]="healthdata.loinc"
         />
         <label for="txtloinc">LOINC</label>
@@ -354,6 +377,7 @@
           name="txtPosCon"
           [(ngModel)]="healthdata.pos_condition"
           formControlName="txtPosCon"
+          title="{{tooltips.txtPosCon}}"
         />
         <label for="txtPosCon">Positive Condition</label>
       </div>
@@ -366,19 +390,21 @@
           name="txtNegCon"
           [(ngModel)]="healthdata.neg_condition"
           formControlName="txtNegCon"
+          title="{{tooltips.txtNegCon}}"
         />
         <label for="txtNegCon">Negative Condition</label>
       </div>
     </div>
 
     <div class="form-floating mb-3 text-center">
-      <button type="submit" class="btn btn-primary btn-lg popup-save-btn" [disabled]="!myForm.valid">
+      <button type="submit" class="btn btn-primary btn-lg popup-save-btn" [disabled]="!myForm.valid" title="Save Edited Data">
         Save
       </button>
       <button
         type="button"
         class="btn btn-outline-secondary btn-lg ms-3 popup-cancel-btn"
         (click)="modal.close()"
+        title="Cancel"
       >
         Cancel
       </button>

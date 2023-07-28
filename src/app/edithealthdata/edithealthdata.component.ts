@@ -16,6 +16,34 @@ export class EdithealthdataComponent implements OnInit {
   };
   ages: Array<number> = [];
 
+  tooltips = {
+    txtText: "Edit Text",
+    txtDisplay: "Edit Display English Text",
+    ddisRequired: "Update is this question Required?",
+    ddMultiChoice: "Update is this Multi Choice question?",
+    txtDisplayOR: "Edit Display Odiya Text",
+    txtDisplayHI: "Edit Display Hindi Text",
+    txtpopup: "Edit Popup English Text",
+    txtpopuphi: "Edit Popup Hindi Text",
+    txtpopupor: "Edit Popup Odiys Text",
+    txtLanguage: "Edit Language to be shown in history note",
+    txtInputType: "Update Input Type",
+    txtGender: "Update Gender",
+    txtPosCon: "Edit Positive Condition",
+    txtNegCon: "Edit Negative Condition",
+    txtPPE: "Edit Perform Physical Exam",
+    txtcitation: "Edit Citation",
+    txtsnomed: "Edit Snomed",
+    txticd: "Edit ICD-10",
+    txtloinc: "Edit LOINC",
+    txtjobaidtype: "Edit Job Aid Type",
+    txtjobaidfile: "Edit Job Aid File",
+    txtassocomplaint: "Edit Associated Complaint",
+    ddExcludeMultiChoice: "Update is this Exclude From Multi Choice question?",
+    txtAgeMin: "Update Minimum Age",
+    txtAgeMax: "Update Maximum Age",
+  }
+
   myForm = new FormGroup(
     {
       txtText: new FormControl(),
@@ -57,7 +85,6 @@ export class EdithealthdataComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.healthdata.topic)this.healthdata.text = this.healthdata.topic;
     if (
       this.healthdata.text.toLowerCase() == 'Associated symptoms'.toLowerCase()
     ) {

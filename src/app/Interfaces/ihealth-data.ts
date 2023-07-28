@@ -1,7 +1,6 @@
 export interface IHealthData {
   id?: string;
   text: string;
-  topic?: string;
   perform_physical_exam?: string;
   display?: string;
   isRequired?: boolean;

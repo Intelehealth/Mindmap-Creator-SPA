@@ -9,6 +9,7 @@
           placeholder=""
           name="txtText"
           formControlName="txtText"
+          title="{{tooltips.txtText}}"
           [(ngModel)]="addData.text"
           list="symptomList"
           (change)="onTextSelection($event)"
@@ -30,6 +31,7 @@
           placeholder=""
           name="txtassocomplaint"
           formControlName="txtassocomplaint"
+          title="{{tooltips.txtassocomplaint}}"
           [(ngModel)]="addData.associated_complaint"
         />
         <label for="txtassocomplaint">Associated Complaint</label>
@@ -44,6 +46,7 @@
           id="txtInputType"
           class="form-select"
           formControlName="txtInputType"
+          title="{{tooltips.txtInputType}}"
           [(ngModel)]="addData.input_type"
           placeholder="Input Type"
         >
@@ -62,6 +65,7 @@
           id="txtGender"
           class="form-select"
           formControlName="txtGender"
+          title="{{tooltips.txtGender}}"
           [(ngModel)]="addData.gender"
         >
           <option value="male" selected="selected">male</option>
@@ -79,6 +83,7 @@
           id="txtAgeMin"
           class="form-select"
           formControlName="txtAgeMin"
+          title="{{tooltips.txtAgeMin}}"
           [(ngModel)]="addData.age_min"
           #txtAgeMin
         >
@@ -92,6 +97,7 @@
           id="txtAgeMax"
           class="form-select"
           formControlName="txtAgeMax"
+          title="{{tooltips.txtAgeMax}}"
           [(ngModel)]="addData.age_max"
           #txtAgeMax
         >
@@ -111,6 +117,7 @@
           id="ddisRequired"
           class="form-select"
           formControlName="ddisRequired"
+          title="{{tooltips.ddisRequired}}"
           [(ngModel)]="addData.isRequired"
           placeholder="Is Required"
         >
@@ -125,6 +132,7 @@
           id="ddMultiChoice"
           class="form-select"
           formControlName="ddMultiChoice"
+          title="{{tooltips.ddMultiChoice}}"
           [(ngModel)]="addData.multi_choice"
           placeholder="Multi Choice"
         >
@@ -141,6 +149,7 @@
           id="ddExcludeMultiChoice"
           class="form-select"
           formControlName="ddExcludeMultiChoice"
+          title="{{tooltips.ddExcludeMultiChoice}}"
           [(ngModel)]="addData.exclude_from_multi_choice"
           placeholder="Exclude From Multi Choice"
         >
@@ -158,6 +167,7 @@
           placeholder=""
           name="txtDisplay"
           formControlName="txtDisplay"
+          title="{{tooltips.txtDisplay}}"
           [(ngModel)]="addData.display"
         />
         <label for="txtDisplay">Display (English)</label>
@@ -173,6 +183,7 @@
           placeholder=""
           name="txtLanguage"
           formControlName="txtLanguage"
+          title="{{tooltips.txtLanguage}}"
           [(ngModel)]="addData.language"
         />
         <label for="txtLanguage">Language to be shown in history note</label>
@@ -189,6 +200,7 @@
           placeholder=""
           name="txtPPE"
           formControlName="txtPPE"
+          title="{{tooltips.txtPPE}}"
           [(ngModel)]="addData.perform_physical_exam"
         />
         <label for="txtPPE">Perform Physical Exam</label>
@@ -201,6 +213,7 @@
           placeholder=""
           name="txtjobaidtype"
           formControlName="txtjobaidtype"
+          title="{{tooltips.txtjobaidtype}}"
           [(ngModel)]="addData.job_aid_type"
         />
         <label for="txtjobaidtype">Job Aid Type</label>
@@ -216,6 +229,7 @@
           placeholder=""
           name="txtjobaidfile"
           formControlName="txtjobaidfile"
+          title="{{tooltips.txtjobaidfile}}"
           [(ngModel)]="addData.job_aid_file"
         />
         <label for="txtjobaidfile">Job Aid File</label>
@@ -231,6 +245,7 @@
           placeholder=""
           name="txtpopup"
           formControlName="txtpopup"
+          title="{{tooltips.txtpopup}}"
           rows="3"
           [(ngModel)]="addData.pop_up"
         ></textarea>
@@ -243,6 +258,7 @@
           placeholder=""
           name="txtpopupor"
           formControlName="txtpopupor"
+          title="{{tooltips.txtpopupor}}"
           rows="3"
           [(ngModel)]="addData.pop_up_or"
         ></textarea>
@@ -257,6 +273,7 @@
           placeholder=""
           name="txtpopuphi"
           formControlName="txtpopuphi"
+          title="{{tooltips.txtpopuphi}}"
           rows="3"
           [(ngModel)]="addData.pop_up_hi"
         ></textarea>
@@ -274,6 +291,7 @@
           placeholder=""
           name="txtDisplayHI"
           formControlName="txtDisplayHI"
+          title="{{tooltips.txtDisplayHI}}"
           [(ngModel)]="addData.display_hi"
         />
         <label for="txtDisplayHI">Display (Hindi)</label>
@@ -286,6 +304,7 @@
           placeholder=""
           name="txtDisplayOR"
           formControlName="txtDisplayOR"
+          title="{{tooltips.txtDisplayOR}}"
           [(ngModel)]="addData.display_or"
         />
         <label for="txtDisplayOR">Display (Odiya)</label>
@@ -301,6 +320,7 @@
           placeholder=""
           name="txtcitation"
           formControlName="txtcitation"
+          title="{{tooltips.txtcitation}}"
           rows="3"
           [(ngModel)]="addData.citation"
         >
@@ -315,6 +335,7 @@
           placeholder=""
           name="txtsnomed"
           formControlName="txtsnomed"
+          title="{{tooltips.txtsnomed}}"
           [(ngModel)]="addData.snomed"
         />
         <label for="txtsnomed">Snomed</label>
@@ -330,6 +351,7 @@
           placeholder=""
           name="txticd"
           formControlName="txticd"
+          title="{{tooltips.txticd}}"
           [(ngModel)]="addData.icd_10"
         />
         <label for="txticd">ICD-10</label>
@@ -342,6 +364,7 @@
           placeholder=""
           name="txtloinc"
           formControlName="txtloinc"
+          title="{{tooltips.txtloinc}}"
           [(ngModel)]="addData.loinc"
         />
         <label for="txtloinc">LOINC</label>
@@ -356,6 +379,7 @@
           placeholder=""
           name="txtPosCon"
           formControlName="txtPosCon"
+          title="{{tooltips.txtPosCon}}"
           [(ngModel)]="addData.pos_condition"
         />
         <label for="txtPosCon">Positive Condition</label>
@@ -369,6 +393,7 @@
           placeholder=""
           name="txtNegCon"
           formControlName="txtNegCon"
+          title="{{tooltips.txtNegCon}}"
           [(ngModel)]="addData.neg_condition"
         />
         <label for="txtNegCon">Negative Condition</label>
@@ -376,13 +401,14 @@
     </div>
 
     <div class="form-floating mb-3 text-center">
-      <button type="submit" class="btn btn-primary btn-lg popup-save-btn" [disabled]="!myForm.valid">
+      <button type="submit" class="btn btn-primary btn-lg popup-save-btn" [disabled]="!myForm.valid" title="Save New Data">
         Save
       </button>
       <button
         type="button"
         class="btn btn-outline-secondary btn-lg popup-cancel-btn ms-3"
         (click)="modal.close()"
+        title="Close"
       >
         Cancel
       </button>

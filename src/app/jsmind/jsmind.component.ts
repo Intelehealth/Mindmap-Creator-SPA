@@ -158,12 +158,12 @@ export class JsmindComponent implements OnInit {
       alert('Please Select Node');
       return;
     }
-
-    let data = {topic: selectedNode.topic, ...selectedNode.data};
+    selectedNode.data.text = selectedNode.topic;
+    let data = {...selectedNode.data};
     let modal = this._modalService.open(ModaledithealthdataComponent, {
       backdrop: true,
       size: 'xl',
-    });
+    }); 
 
     modal.componentInstance.healthdata = data;
     modal.result.then((res: IHealthData) => {

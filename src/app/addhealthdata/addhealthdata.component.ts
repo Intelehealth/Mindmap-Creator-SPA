@@ -16,6 +16,34 @@ export class AddhealthdataComponent implements OnInit {
   };
   ages: Array<number> = [];
 
+  tooltips = {
+    txtText: "Add Text",
+    txtDisplay: "Add Display English Text",
+    ddisRequired: "Select is this question Required?",
+    ddMultiChoice: "Select is this Multi Choice question?",
+    txtDisplayOR: "Add Display Odiya Text",
+    txtDisplayHI: "Add Display Hindi Text",
+    txtpopup: "Add Popup English Text",
+    txtpopuphi: "Add Popup Hindi Text",
+    txtpopupor: "Add Popup Odiys Text",
+    txtLanguage: "Add Language to be shown in history note",
+    txtInputType: "Select Input Type",
+    txtGender: "Select Gender",
+    txtPosCon: "Add Positive Condition",
+    txtNegCon: "Add Negative Condition",
+    txtPPE: "Add Perform Physical Exam",
+    txtcitation: "Add Citation",
+    txtsnomed: "Add Snomed",
+    txticd: "Add ICD-10",
+    txtloinc: "Add LOINC",
+    txtjobaidtype: "Add Job Aid Type",
+    txtjobaidfile: "Add Job Aid File",
+    txtassocomplaint: "Add Associated Complaint",
+    ddExcludeMultiChoice: "Select is this Exclude From Multi Choice question?",
+    txtAgeMin: "Select Minimum Age",
+    txtAgeMax: "Select Maximum Age",
+  }
+
   myForm = new FormGroup(
     {
       txtText: new FormControl(),
