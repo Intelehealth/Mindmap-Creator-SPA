@@ -25,7 +25,7 @@ export class AddhealthdataComponent implements OnInit {
     txtDisplayHI: "Add Display Hindi Text",
     txtpopup: "Add Popup English Text",
     txtpopuphi: "Add Popup Hindi Text",
-    txtpopupor: "Add Popup Odiys Text",
+    txtpopupor: "Add Popup Odiya Text",
     txtLanguage: "Add Language to be shown in history note",
     txtInputType: "Select Input Type",
     txtGender: "Select Gender",
