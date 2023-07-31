@@ -80,6 +80,9 @@ jmnode{
   line-height: 150%;
   cursor: pointer;
 }
+jmnode.root{
+  background-color: #FFA500 !important;
+}
 jmnode:hover{
   background:#4B39B7;
 }
@@ -87,7 +90,7 @@ jmnode.root:hover{
   background:#4B39B7 !important;
 }
 jmnode.selected{
-  background-color:#2E1E91;
+  background-color:#2E1E91 !important;
   color:#fff;
   box-shadow:2px 2px 8px #000;
 }

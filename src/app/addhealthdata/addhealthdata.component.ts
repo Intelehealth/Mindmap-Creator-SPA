@@ -1,18 +1,17 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { IHealthData } from '../Interfaces/ihealth-data';
-import { Result, Ok, Err } from '@sniptt/monads';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AgeCompareValidator } from '../validators/agecomparevalidator';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { IMindMapData } from '../Interfaces/mindmap-interface';
 @Component({
   selector: 'app-addhealthdata',
   templateUrl: './addhealthdata.component.html',
   styleUrls: ['./addhealthdata.component.css'],
 })
 export class AddhealthdataComponent implements OnInit {
-  @Output() onSave = new EventEmitter<IHealthData>();
-  addData: IHealthData = {
-    text: 'Enter Text',
+  @Output() onSave = new EventEmitter<IMindMapData>();
+  addData: IMindMapData = {
+    topic: 'Enter Text'
   };
   ages: Array<number> = [];
 

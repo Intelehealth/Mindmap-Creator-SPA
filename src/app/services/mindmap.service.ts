@@ -13,86 +13,17 @@ export class MindmapService {
     perform_physical_exam:
       'Abdomen:Scars;Abdomen:Distension;Abdomen:Tenderness;Abdomen:Lumps;Abdomen:Rebound tenderness;Abdomen:Peristaltic sound;Physical Growth:Sexual Maturation;',
     display_or: 'ପେଟଯନ୍ତ୍ରଣା',
-    /* options: [
-      {
-        id: 'ID_210551359',
-        text: 'Site',
-        display: 'Which part of the abdomen do you feel pain?',
-        isRequired: true,
-        multi_choice: false,
-        display_or: 'କୋଉଯାଗାରେ',
-        exclude_from_multi_choice: true,
-        age_max: 120,
-        age_min: 50,
-        citation: 'part of body',
-        snomed: '822998006-276140008',
-        icd_10: 'abdomen',
-        loinc: 'pain',
-        job_aid_type: 'image',
-        job_aid_file: 'jaundiceexample',
-        associated_complaint: 'Syncope',
-        options: [
-          {
-            id: 'ID_562710446',
-            text: 'Lower (R) - Left Illiac Fossa',
-            display_or: 'ବାମ ତଳ',
-            display_hi: 'निम्न (R) – बायां इलिएक फोसा',
-            exclude_from_multi_choice: false,
-            pop_up:
-              'Based on the event or timeframe, enter an estimated date for the last menstrual period',
-            pop_up_hi:
-              'घटना या समय सीमा के आधार पर, पिछले मासिक धर्म की अनुमानित तिथि दर्ज करें',
-          },
-          {
-            id: 'ID_917293565',
-            text: 'All over',
-            display_or: 'ଚାରିଅାଡ଼େ',
-            display_hi: 'हर तरफ',
-          },
-        ],
-        display_hi: 'पेट के किस भाग में आप दर्द महसूस कर रहे हैं?',
-      },
-      {
-        id: 'ID_313791833',
-        text: 'Duration',
-        display: 'Since when have you had this symptom?',
-        isRequired: true,
-        multi_choice: false,
-        display_or: 'କେବେଠାରୁ',
-        language: '%',
-        options: [
-          {
-            id: 'ID_826155781',
-            text: '[Enter since when]',
-            input_type: 'duration',
-            language: 'since',
-            display_or: 'କେବେ ଠାରୁ ଲେଖ',
-            display_hi: '( कब से है- दर्ज करें)',
-            exclude_from_multi_choice: true,
-          },
-        ],
-        display_hi: 'आपको यह लक्षण कब से है?',
-      },
-    ],*/
-    display_hi: 'पेट दर्द ',
+    display_hi: 'पेट दर्द '
   };
   private dataSubject = new BehaviorSubject<IMindMapData>(
     this.getMindMapData(this.mockData)
   );
   $data = this.dataSubject.asObservable();
-  addData(parentNode: IMindMapData, childNode: IMindMapData) {
-    if (parentNode) {
-      if (!parentNode.children) {
-        parentNode.children = new Array<IMindMapData>();
-      }
-      parentNode.children.push(childNode);
-    }
-  }
+
   getMindMapData(healthdata?: IHealthData): IMindMapData {
-    let item: IMindMapData = { topic: '' };
+    let item: IMindMapData = { topic: ''};
     if (healthdata) {
       item.id = healthdata.id;
-      item.text = healthdata.text;
       item.topic = healthdata.text;
       item.perform_physical_exam = healthdata.perform_physical_exam;
       item.display = healthdata.display;

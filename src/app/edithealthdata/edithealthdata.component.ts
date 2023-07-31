@@ -4,15 +4,16 @@ import { Result, Ok, Err } from '@sniptt/monads';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AgeCompareValidator } from '../validators/agecomparevalidator';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { IMindMapData } from '../Interfaces/mindmap-interface';
 @Component({
   selector: 'app-edithealthdata',
   templateUrl: './edithealthdata.component.html',
   styleUrls: ['./edithealthdata.component.css'],
 })
 export class EdithealthdataComponent implements OnInit {
-  @Output() onEdit = new EventEmitter<IHealthData>();
-  @Input() public healthdata: IHealthData = {
-    text: '',
+  @Output() onEdit = new EventEmitter<IMindMapData>();
+  @Input() public healthdata: IMindMapData = {
+    topic: ''
   };
   ages: Array<number> = [];
 
@@ -86,7 +87,7 @@ export class EdithealthdataComponent implements OnInit {
 
   ngOnInit(): void {
     if (
-      this.healthdata.text.toLowerCase() == 'Associated symptoms'.toLowerCase()
+      this.healthdata.topic.toLowerCase() == 'Associated symptoms'.toLowerCase()
     ) {
       this.positiveCondition = true;
       this.negativeCondition = true;
