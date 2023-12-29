@@ -33,3 +33,5 @@ A step by step series of examples that tell you how to get a development environ
 
 - [Angular](https://angular.io/) - Angular Framework
 - [BootStrap](https://getbootstrap.com/) - UI design
+
+[Disclaimer](https://github.com/Intelehealth/Mindmap-Creator-SPA/blob/main/HEALTHCARE%20DISCLAIMER.md)
