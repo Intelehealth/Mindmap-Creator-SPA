@@ -70,6 +70,10 @@ export class MindmapService {
       item.isRequired = mmdata.isRequired;
       item.multi_choice = mmdata.multi_choice;
       item.exclude_from_multi_choice = mmdata.exclude_from_multi_choice;
+      item.having_nested_question = mmdata.having_nested_question;
+      item.compare_duplicate_node = mmdata.compare_duplicate_node;
+      item.enable_exclusive_option = mmdata.enable_exclusive_option;
+      item.is_exclusive_option = mmdata.is_exclusive_option;
       item.display_or = mmdata.display_or;
       item.display_hi = mmdata.display_hi;
       item.pop_up = mmdata.pop_up;

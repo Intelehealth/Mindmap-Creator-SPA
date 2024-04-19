@@ -6,6 +6,10 @@ export interface IMindMapData {
   isRequired?: boolean;
   multi_choice?: boolean;
   exclude_from_multi_choice?: boolean;
+  having_nested_question?:boolean;
+  compare_duplicate_node?: string;
+  enable_exclusive_option?:boolean;
+  is_exclusive_option?:boolean;
   display_or?: string;
   display_hi?: string;
   pop_up?: string;

@@ -174,6 +174,72 @@
     </div>
 
     <div class="row form-floating mb-3">
+      <div class="col-sm form-floating mb-3">
+        <select
+          name="havingNestedQuestion"
+          id="havingNestedQuestion"
+          class="form-select"
+          formControlName="ddHavingNestedQuestion"
+          title="{{tooltips.ddHavingNestedQuestion}}"
+          [(ngModel)]="healthdata.having_nested_question"
+          placeholder="Having Nested Question"
+        >
+          <option [ngValue]="true">true</option>
+          <option [ngValue]="false">false</option>
+        </select>
+        <label for="ddHavingNestedQuestion">Having Nested Question</label>
+      </div>
+
+      <div class="col-sm form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="txtCompareDuplicateNode"
+          placeholder=""
+          name="txtCompareDuplicateNode"
+          formControlName="txtCompareDuplicateNode"
+          title="{{tooltips.txtCompareDuplicateNode}}"
+          [(ngModel)]="healthdata.compare_duplicate_node"
+        />
+        <label for="txtCompareDuplicateNode">Compare Duplicate Node</label>
+      </div>
+    </div>
+
+    <div class="row form-floating mb-3">
+      <div class="col-sm form-floating mb-3">
+        <select
+          name="ddEnableExclusiveOption"
+          id="ddEnableExclusiveOption"
+          class="form-select"
+          formControlName="ddEnableExclusiveOption"
+          title="{{tooltips.ddEnableExclusiveOption}}"
+          [(ngModel)]="healthdata.enable_exclusive_option"
+          placeholder="Enable Exclusive Option"
+        >
+          <option [ngValue]="true">true</option>
+          <option [ngValue]="false">false</option>
+        </select>
+        <label for="ddEnableExclusiveOption">Enable Exclusive Option</label>
+      </div>
+
+      <div class="col-sm form-floating mb-3">
+        <select
+          name="ddIsExclusiveOption"
+          id="ddIsExclusiveOption"
+          class="form-select"
+          formControlName="ddIsExclusiveOption"
+          title="{{tooltips.ddIsExclusiveOption}}"
+          [(ngModel)]="healthdata.is_exclusive_option"
+          placeholder="Is Exclusive Option"
+        >
+          <option [ngValue]="true">true</option>
+          <option [ngValue]="false">false</option>
+        </select>
+        <label for="ddIsExclusiveOption">Is Exclusive Option</label>
+      </div>
+    </div>
+
+    <div class="row form-floating mb-3">
       <div class="col-6 form-floating mb-3">
         <input
           type="text"
